@@ -13,28 +13,21 @@ public class Pawn extends Figure {
     }
 
 
-
-    public static void move(String start, String end, Figure[][] board){
-        int sRow = start.charAt(0)-'1'+1;
-        int sCol = start.charAt(1)-'1'+1;
-        int eRow = end.charAt(0)-'1'+1;
-        int eCol = end.charAt(1)-'1'+1;
-        board[eRow][eCol] = board[sRow][sCol];
-        board[sRow][sCol] = null;
+    public void move(int eRow, int eCol, Figure[][] board){
+        board[this.row][this.col] = null;
+        this.row = eRow;
+        this.col = eCol;
+        board[this.row][this.col] = this;
     }
 
 
-    public static boolean isPossible(String start, String end, Figure[][] board) {
+    public static boolean isPossible(int sRow, int sCol, int eRow, int eCol, Figure[][] board) {
 
-        int sRow = start.charAt(0)-'1'+1;
-        int sCol = start.charAt(1)-'1'+1;
-        int eRow = end.charAt(0)-'1'+1;
-        int eCol = end.charAt(1)-'1'+1;
         String colour = board[sRow][sCol].getColour();
 
         if (colour.equals("white")){
 
-            // check if the piece can even move to the desired position without regarding other pieces
+            // check if the piece can move to the desired position WITHOUT regarding other pieces
             if (sRow >= eRow){
                 return false;
             }
@@ -54,7 +47,7 @@ public class Pawn extends Figure {
                 movement = "diagonal";
             }
 
-            // check if the piece can even move to the desired position dependent on other pieces
+            // check if the piece can move to the desired position regarding other pieces
             if (movement.equals("straight")){
                 if (board[eRow][eCol] == null){
                     return true;

@@ -104,35 +104,33 @@ public class Chess extends Frame {
         int eRow = endCords.charAt(0)-'1'+1;
         int eCol = endCords.charAt(1)-'1'+1;
 
-        if (startCords.length() != 2 || !Character.isDigit(startCords.charAt(0)) || !Character.isDigit(startCords.charAt(1))){
+        if (startCords.length() != 2 || !Character.isDigit(startCords.charAt(0)) || !Character.isDigit(startCords.charAt(1))){ // check invalid input (start)
             System.out.println("Invalid input.");
             return;
         }
-        else if (endCords.length() != 2 || !Character.isDigit(endCords.charAt(0)) || !Character.isDigit(endCords.charAt(1))){
+        else if (endCords.length() != 2 || !Character.isDigit(endCords.charAt(0)) || !Character.isDigit(endCords.charAt(1))){ // check invalid input (end)
             System.out.println("Invalid input.");
             return;
         }
-
-        if (board[sRow][sCol] == null){
+        else if (board[sRow][sCol] == null){ // check if there is a piece at start-coordinates
             System.out.println("There's no piece there.");
             return;
         }
-
-        if (sRow > 7 || sRow < 0 || eRow > 7 || eRow < 0){
+        else if (sRow > 7 || sRow < 0 || eRow > 7 || eRow < 0){ // check if row-coordinates are out of bounds
             System.out.println("You can't move outside of the chessboard.");
             return;
         }
-
-        if (sCol > 7 || sCol < 0 || eCol > 7 || eCol < 0){
+        else if (sCol > 7 || sCol < 0 || eCol > 7 || eCol < 0){ // check if col-coordinates are out of bounds
             System.out.println("You can't move outside of the chessboard.");
             return;
         }
 
         String type = board[sRow][sCol].getType();
 
-        if (type.equals("pawnW") || type.equals("pawnB")){
-            if (Pawn.isPossible(startCords, endCords, board)){
-                Pawn.move(startCords, endCords, board);
+        if (type.equals("pawnW") || type.equals("pawnB")){ // check if selected piece is a pawn
+            Pawn pawn = (Pawn)board[sRow][sCol];
+            if (Pawn.isPossible(sRow, sCol, eRow, eCol, board)){
+                pawn.move(eRow, eCol,board);
             }
         }
 

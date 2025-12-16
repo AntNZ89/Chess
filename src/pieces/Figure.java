@@ -30,5 +30,12 @@ public abstract class Figure {
         return this.type;
     }
 
+    public void setRow(int row){
+        this.row = row;
+    }
+
+    public void setCol(int col){
+        this.col = col;
+    }
 
 }
