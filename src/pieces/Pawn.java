@@ -2,6 +2,8 @@ package pieces;
 
 public class Pawn extends Figure {
 
+    boolean canGo2;
+
     public Pawn(String colour, int row, int col) {
         super(colour, row, col);
         if (this.colour.equals("white")){
@@ -10,6 +12,15 @@ public class Pawn extends Figure {
         else {
             this.type = "pawnB";
         }
+        this.canGo2 = true;
+    }
+
+    public boolean getCanGo2(){
+        return this.canGo2;
+    }
+
+    public void setCanGo2False(){
+        this.canGo2 = false;
     }
 
 
@@ -18,12 +29,15 @@ public class Pawn extends Figure {
         this.row = eRow;
         this.col = eCol;
         board[this.row][this.col] = this;
+        this.canGo2 = false;
     }
 
 
-    public static boolean isPossible(int sRow, int sCol, int eRow, int eCol, Figure[][] board) {
+    public boolean isPossible(int eRow, int eCol, Figure[][] board) {
 
-        String colour = board[sRow][sCol].getColour();
+        String colour = this.colour;
+        int sRow = this.row;
+        int sCol = this.col;
 
         if (colour.equals("white")){
 
@@ -31,7 +45,7 @@ public class Pawn extends Figure {
             if (sRow >= eRow){
                 return false;
             }
-            else if (sRow+1 != eRow){
+            else if (sRow+1 != eRow && !this.canGo2){
                 return false;
             }
             else if (Math.abs(eCol-sCol) > 1){
@@ -49,7 +63,7 @@ public class Pawn extends Figure {
 
             // check if the piece can move to the desired position regarding other pieces
             if (movement.equals("straight")){
-                if (board[eRow][eCol] == null){
+                if (board[eRow][eCol] == null && !canGo2){
                     return true;
                 }
                 else {
@@ -66,6 +80,10 @@ public class Pawn extends Figure {
                 else if (board[eRow][eCol].getColour().equals("black")){
                     return true;
                 }
+            }
+
+            if (canGo2 && board[eRow-1][eCol] != null){
+                return false;
             }
 
         }

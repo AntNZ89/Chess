@@ -129,7 +129,7 @@ public class Chess extends Frame {
 
         if (type.equals("pawnW") || type.equals("pawnB")){ // check if selected piece is a pawn
             Pawn pawn = (Pawn)board[sRow][sCol];
-            if (Pawn.isPossible(sRow, sCol, eRow, eCol, board)){
+            if (pawn.isPossible(eRow, eCol, board)){
                 pawn.move(eRow, eCol,board);
             }
         }
@@ -151,6 +151,10 @@ public class Chess extends Frame {
     public static Figure[][] initialize(){
         Figure[][] arr = new Figure[8][8];
         initPawns(arr);
+        //test
+        Pawn pawn = new Pawn("white", 3, 0);
+        arr[1][0] = pawn;
+        //test
         return arr;
     }
 
