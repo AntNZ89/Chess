@@ -18,6 +18,10 @@ public class Chess extends Frame {
     private Button bStart = new Button();
     private Label lchoosepiece = new Label();
     private Label lmoveto = new Label();
+
+    private Label row = new Label();
+    private Label col = new Label();
+
     private TextField start = new TextField();
     private TextField end = new TextField();
     private Label colour = new Label();
@@ -69,9 +73,21 @@ public class Chess extends Frame {
         lmoveto.setFont(new Font("Dialog", Font.PLAIN, 11));
         lmoveto.setText("move to:");
         cp.add(lmoveto);
+
+        row.setBounds(120, 15, 80, 24);
+        row.setFont(new Font("Dialog", Font.PLAIN, 11));
+        row.setText("Row");
+        cp.add(row);
+
+        col.setBounds(220, 15, 80, 24);
+        col.setFont(new Font("Dialog", Font.PLAIN, 11));
+        col.setText("Col");
+        cp.add(col);
+
         start.setBounds(120, 40, 80, 24);
         start.setFont(new Font("Dialog", Font.PLAIN, 11));
         cp.add(start);
+
         end.setBounds(120, 80, 80, 24);
         end.setFont(new Font("Dialog", Font.PLAIN, 11));
         end.setText("");
