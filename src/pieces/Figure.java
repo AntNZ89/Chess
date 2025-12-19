@@ -13,6 +13,12 @@ public abstract class Figure {
         this.col = col;
     }
 
+    public void move(int eRow, int eCol, Figure[][] board){
+        board[this.row][this.col] = null;
+        this.row = eRow;
+        this.col = eCol;
+        board[this.row][this.col] = this;
+    }
 
     public String getColour(){
         return this.colour;

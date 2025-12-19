@@ -15,7 +15,6 @@ public class Pawn extends Figure {
     }
 
 
-
     public void move(int eRow, int eCol, Figure[][] board){
         board[this.row][this.col] = null;
         this.row = eRow;
@@ -85,7 +84,6 @@ public class Pawn extends Figure {
 
 
     public boolean isPossibleW(int eRow, int eCol, Figure[][] board){
-        String colour = this.colour;
         int sRow = this.row;
         int sCol = this.col;
 
