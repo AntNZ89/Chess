@@ -1,5 +1,7 @@
 import pieces.Figure;
 import pieces.Pawn;
+import pieces.Rook;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -196,7 +198,19 @@ public class Chess extends Frame {
     public static Figure[][] initialize(){
         Figure[][] board = new Figure[8][8];
         initPawns(board);
+        initRooks(board);
         return board;
+    }
+
+    private static void initRooks(Figure[][] board){
+        Rook rookW1 = new Rook("white", 1, 0);
+        Rook rookW2 = new Rook("white", 1, 7);
+        board[rookW1.getRow()][rookW1.getCol()] = rookW1;
+        board[rookW2.getRow()][rookW2.getCol()] = rookW2;
+        Rook rookB1 = new Rook("black", 6, 0);
+        Rook rookB2 = new Rook("black", 6, 7);
+        board[rookB1.getRow()][rookB1.getCol()] = rookB1;
+        board[rookB2.getRow()][rookB2.getCol()] = rookB2;
     }
 
     private static void initPawns(Figure[][] board){

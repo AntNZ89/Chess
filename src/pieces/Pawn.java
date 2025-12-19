@@ -2,17 +2,16 @@ package pieces;
 
 public class Pawn extends Figure {
 
-    boolean canGo2;
+    boolean canGo2 = true;
 
     public Pawn(String colour, int row, int col) {
         super(colour, row, col);
-        if (this.colour.equals("white")){
+        if (this.colour.equalsIgnoreCase("white")){
             this.type = "pawnW";
         }
-        else {
+        else if (this.colour.equalsIgnoreCase("black")){
             this.type = "pawnB";
         }
-        this.canGo2 = true;
     }
 
 
