@@ -21,6 +21,8 @@ public class Chess extends Frame {
     private Label row = new Label();
     private Label col = new Label();
 
+    private Label turn = new Label();
+
     private TextField startC = new TextField();
     private TextField endC = new TextField();
 
@@ -73,6 +75,11 @@ public class Chess extends Frame {
         lchoosepiece.setFont(new Font("Dialog", Font.PLAIN, 11));
         lchoosepiece.setText("choose piece:");
         cp.add(lchoosepiece);
+
+        turn.setBounds(16, 10, 80, 24);
+        turn.setFont(new Font("Dialog", Font.PLAIN, 14));
+        turn.setText("WHITE");
+        cp.add(turn);
 
         lmoveto.setBounds(16, 80, 80, 24);
         lmoveto.setFont(new Font("Dialog", Font.PLAIN, 11));
@@ -162,11 +169,13 @@ public class Chess extends Frame {
 
         if (type.equals("pawnW") || type.equals("pawnB")){ // check if selected piece is a pawn
             Pawn pawn = (Pawn)board[sRow][sCol];
-            if (type.equals("pawnW") && pawn.isPossibleW(eRow, eCol, board)){
+            if (type.equals("pawnW") && pawn.isPossibleW(eRow, eCol, board) && turn.getText().equals("WHITE")){
                 pawn.move(eRow, eCol, board);
+                turn.setText("BLACK");
             }
-            else if (type.equals("pawnB") && pawn.isPossibleB(eRow, eCol, board)){
+            else if (type.equals("pawnB") && pawn.isPossibleB(eRow, eCol, board) && turn.getText().equals("BLACK")){
                 pawn.move(eRow, eCol, board);
+                turn.setText("WHITE");
             }
         }
 
