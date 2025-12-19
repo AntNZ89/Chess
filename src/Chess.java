@@ -158,12 +158,15 @@ public class Chess extends Frame {
             return;
         }
 
-        String type = board[sRow][sCol].getType();
+        String type = board[sRow][sCol].getType(); // get the type of piece that's used
 
         if (type.equals("pawnW") || type.equals("pawnB")){ // check if selected piece is a pawn
             Pawn pawn = (Pawn)board[sRow][sCol];
-            if (pawn.isPossible(eRow, eCol, board)){
-                pawn.move(eRow, eCol,board);
+            if (type.equals("pawnW") && pawn.isPossibleW(eRow, eCol, board)){
+                pawn.move(eRow, eCol, board);
+            }
+            else if (type.equals("pawnB") && pawn.isPossibleB(eRow, eCol, board)){
+                pawn.move(eRow, eCol, board);
             }
         }
 
@@ -182,12 +185,12 @@ public class Chess extends Frame {
 
 
     public static Figure[][] initialize(){
-        Figure[][] arr = new Figure[8][8];
-        initPawns(arr);
-        return arr;
+        Figure[][] board = new Figure[8][8];
+        initPawns(board);
+        return board;
     }
 
-    private static void initPawns(Figure[][] arr){
+    private static void initPawns(Figure[][] board){
         Pawn pawnW1 = new Pawn("white", 0, 0);
         Pawn pawnW2 = new Pawn("white", 0, 1);
         Pawn pawnW3 = new Pawn("white", 0, 2);
@@ -196,14 +199,14 @@ public class Chess extends Frame {
         Pawn pawnW6 = new Pawn("white", 0, 5);
         Pawn pawnW7 = new Pawn("white", 0, 6);
         Pawn pawnW8 = new Pawn("white", 0, 7);
-        arr[pawnW1.getRow()][pawnW1.getCol()] = pawnW1;
-        arr[pawnW2.getRow()][pawnW2.getCol()] = pawnW2;
-        arr[pawnW3.getRow()][pawnW3.getCol()] = pawnW3;
-        arr[pawnW4.getRow()][pawnW4.getCol()] = pawnW4;
-        arr[pawnW5.getRow()][pawnW5.getCol()] = pawnW5;
-        arr[pawnW6.getRow()][pawnW6.getCol()] = pawnW6;
-        arr[pawnW7.getRow()][pawnW7.getCol()] = pawnW7;
-        arr[pawnW8.getRow()][pawnW8.getCol()] = pawnW8;
+        board[pawnW1.getRow()][pawnW1.getCol()] = pawnW1;
+        board[pawnW2.getRow()][pawnW2.getCol()] = pawnW2;
+        board[pawnW3.getRow()][pawnW3.getCol()] = pawnW3;
+        board[pawnW4.getRow()][pawnW4.getCol()] = pawnW4;
+        board[pawnW5.getRow()][pawnW5.getCol()] = pawnW5;
+        board[pawnW6.getRow()][pawnW6.getCol()] = pawnW6;
+        board[pawnW7.getRow()][pawnW7.getCol()] = pawnW7;
+        board[pawnW8.getRow()][pawnW8.getCol()] = pawnW8;
         Pawn pawnB1 = new Pawn("black", 7, 0);
         Pawn pawnB2 = new Pawn("black", 7, 1);
         Pawn pawnB3 = new Pawn("black", 7, 2);
@@ -212,14 +215,14 @@ public class Chess extends Frame {
         Pawn pawnB6 = new Pawn("black", 7, 5);
         Pawn pawnB7 = new Pawn("black", 7, 6);
         Pawn pawnB8 = new Pawn("black", 7, 7);
-        arr[pawnB1.getRow()][pawnB1.getCol()] = pawnB1;
-        arr[pawnB2.getRow()][pawnB2.getCol()] = pawnB2;
-        arr[pawnB3.getRow()][pawnB3.getCol()] = pawnB3;
-        arr[pawnB4.getRow()][pawnB4.getCol()] = pawnB4;
-        arr[pawnB5.getRow()][pawnB5.getCol()] = pawnB5;
-        arr[pawnB6.getRow()][pawnB6.getCol()] = pawnB6;
-        arr[pawnB7.getRow()][pawnB7.getCol()] = pawnB7;
-        arr[pawnB8.getRow()][pawnB8.getCol()] = pawnB8;
+        board[pawnB1.getRow()][pawnB1.getCol()] = pawnB1;
+        board[pawnB2.getRow()][pawnB2.getCol()] = pawnB2;
+        board[pawnB3.getRow()][pawnB3.getCol()] = pawnB3;
+        board[pawnB4.getRow()][pawnB4.getCol()] = pawnB4;
+        board[pawnB5.getRow()][pawnB5.getCol()] = pawnB5;
+        board[pawnB6.getRow()][pawnB6.getCol()] = pawnB6;
+        board[pawnB7.getRow()][pawnB7.getCol()] = pawnB7;
+        board[pawnB8.getRow()][pawnB8.getCol()] = pawnB8;
     }
 
     public static String printBoard(Figure[][] board){
