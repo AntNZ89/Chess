@@ -179,11 +179,11 @@ public class Chess extends Frame {
             }
         }
         else if (board[sRow][sCol] instanceof Rook rook){
-            if (rook.getType().equals("rookW") && rook.isPossibleW(eRow, eCol, board) && turn.getText().equals("WHITE")){
+            if (rook.getType().equals("rookW") && rook.isPossible(eRow, eCol, board) && turn.getText().equals("WHITE")){
                 rook.move(eRow, eCol, board);
                 turn.setText("BLACK");
             }
-            else if (rook.getType().equals("rookB") && rook.isPossibleW(eRow, eCol, board) && turn.getText().equals("BLACK")){
+            else if (rook.getType().equals("rookB") && rook.isPossible(eRow, eCol, board) && turn.getText().equals("BLACK")){
                 rook.move(eRow, eCol, board);
                 turn.setText("WHITE");
             }
@@ -222,7 +222,7 @@ public class Chess extends Frame {
     }
 
     private static void initPawns(Figure[][] board){
-        Pawn pawnW1 = new Pawn("white", 1, 0);
+//        Pawn pawnW1 = new Pawn("white", 1, 0);
         Pawn pawnW2 = new Pawn("white", 1, 1);
         Pawn pawnW3 = new Pawn("white", 1, 2);
         Pawn pawnW4 = new Pawn("white", 1, 3);
@@ -230,7 +230,7 @@ public class Chess extends Frame {
         Pawn pawnW6 = new Pawn("white", 1, 5);
         Pawn pawnW7 = new Pawn("white", 1, 6);
         Pawn pawnW8 = new Pawn("white", 1, 7);
-        board[pawnW1.getRow()][pawnW1.getCol()] = pawnW1;
+//        board[pawnW1.getRow()][pawnW1.getCol()] = pawnW1;
         board[pawnW2.getRow()][pawnW2.getCol()] = pawnW2;
         board[pawnW3.getRow()][pawnW3.getCol()] = pawnW3;
         board[pawnW4.getRow()][pawnW4.getCol()] = pawnW4;

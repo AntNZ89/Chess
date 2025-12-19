@@ -112,7 +112,7 @@ public class Pawn extends Figure {
 
         boolean isDouble =  sRow+2 == eRow;
 
-        // check if the piece can move to the desired position regarding other pieces
+        // check if the piece can move to the desired position REGARDING other pieces
         if (movement.equals("straight")){
             if (board[eRow][eCol] == null && !isDouble){ // check if single-move possible
                 return true;
