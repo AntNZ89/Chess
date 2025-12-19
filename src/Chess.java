@@ -1,6 +1,5 @@
 import pieces.Figure;
 import pieces.Pawn;
-
 import java.awt.*;
 import java.awt.event.*;
 
