@@ -21,8 +21,11 @@ public class Chess extends Frame {
     private Label row = new Label();
     private Label col = new Label();
 
-    private TextField start = new TextField();
-    private TextField end = new TextField();
+    private TextField startC = new TextField();
+    private TextField endC = new TextField();
+
+    private TextField startR = new TextField();
+    private TextField endR = new TextField();
     private Label colour = new Label();
     Figure[][] board = initialize();
     boolean isStarted = false;
@@ -55,6 +58,7 @@ public class Chess extends Frame {
             }
         });
         cp.add(bmove);
+
         bStart.setBounds(104, 200, 80, 24);
         bStart.setFont(new Font("Dialog", Font.PLAIN, 11));
         bStart.setLabel("start");
@@ -64,10 +68,12 @@ public class Chess extends Frame {
             }
         });
         cp.add(bStart);
+
         lchoosepiece.setBounds(16, 40, 80, 24);
         lchoosepiece.setFont(new Font("Dialog", Font.PLAIN, 11));
         lchoosepiece.setText("choose piece:");
         cp.add(lchoosepiece);
+
         lmoveto.setBounds(16, 80, 80, 24);
         lmoveto.setFont(new Font("Dialog", Font.PLAIN, 11));
         lmoveto.setText("move to:");
@@ -83,14 +89,23 @@ public class Chess extends Frame {
         col.setText("Col");
         cp.add(col);
 
-        start.setBounds(120, 40, 80, 24);
-        start.setFont(new Font("Dialog", Font.PLAIN, 11));
-        cp.add(start);
+        startR.setBounds(120, 40, 80, 24);
+        startR.setFont(new Font("Dialog", Font.PLAIN, 11));
+        cp.add(startR);
 
-        end.setBounds(120, 80, 80, 24);
-        end.setFont(new Font("Dialog", Font.PLAIN, 11));
-        end.setText("");
-        cp.add(end);
+        startC.setBounds(220, 40, 80, 24);
+        startC.setFont(new Font("Dialog", Font.PLAIN, 11));
+        cp.add(startC);
+
+        endR.setBounds(120, 80, 80, 24);
+        endR.setFont(new Font("Dialog", Font.PLAIN, 11));
+        cp.add(endR);
+
+        endC.setBounds(220, 80, 80, 24);
+        endC.setFont(new Font("Dialog", Font.PLAIN, 11));
+        cp.add(endC);
+
+
         colour.setBounds(16, 8, 80, 24);
         colour.setFont(new Font("Dialog", Font.PLAIN, 11));
         colour.setText("");
@@ -112,22 +127,25 @@ public class Chess extends Frame {
             return;
         }
 
-        String startCords = start.getText();
-        String endCords = end.getText();
-        int sRow = startCords.charAt(0)-'1'+1;
-        int sCol = startCords.charAt(1)-'1'+1;
-        int eRow = endCords.charAt(0)-'1'+1;
-        int eCol = endCords.charAt(1)-'1'+1;
+        if (startR.getText().length() != 1 || startC.getText().length() != 1
+            || endR.getText().length() != 1 || endC.getText().length() != 1){ // check for invalid input
+            System.out.println("Invalid input, only one digit per field");
+            return;
+        }
 
-        if (startCords.length() != 2 || !Character.isDigit(startCords.charAt(0)) || !Character.isDigit(startCords.charAt(1))){ // check invalid input (start)
-            System.out.println("Invalid input.");
+        if (!Character.isDigit(startR.getText().charAt(0)) || !Character.isDigit(startC.getText().charAt(0))
+            || !Character.isDigit(endR.getText().charAt(0)) || !Character.isDigit(endC.getText().charAt(0))){ // check for invalid input
+            System.out.println("Invalid input, use digits");
             return;
         }
-        else if (endCords.length() != 2 || !Character.isDigit(endCords.charAt(0)) || !Character.isDigit(endCords.charAt(1))){ // check invalid input (end)
-            System.out.println("Invalid input.");
-            return;
-        }
-        else if (board[sRow][sCol] == null){ // check if there is a piece at start-coordinates
+
+        int sRow = startR.getText().charAt(0)-'1'+1;
+        int sCol = startC.getText().charAt(0)-'1'+1;
+        int eRow = endR.getText().charAt(0)-'1'+1;
+        int eCol = endC.getText().charAt(0)-'1'+1;
+
+
+        if (board[sRow][sCol] == null){ // check if there is a piece at start-coordinates
             System.out.println("There's no piece there.");
             return;
         }
@@ -166,10 +184,6 @@ public class Chess extends Frame {
     public static Figure[][] initialize(){
         Figure[][] arr = new Figure[8][8];
         initPawns(arr);
-        //test
-        Pawn pawn = new Pawn("white", 3, 0);
-        arr[1][0] = pawn;
-        //test
         return arr;
     }
 

@@ -42,13 +42,16 @@ public class Pawn extends Figure {
         if (colour.equals("white")){
 
             // check if the piece can move to the desired position WITHOUT regarding other pieces
-            if (sRow >= eRow){
+            if (sRow >= eRow || eRow > sRow+2){
+                System.out.println("Can't go there 1");
                 return false;
             }
             else if (sRow+1 != eRow && !this.canGo2){
+                System.out.println("Can't go there 2");
                 return false;
             }
             else if (Math.abs(eCol-sCol) > 1){
+                System.out.println("Can't go there 3");
                 return false;
             }
 
@@ -61,9 +64,14 @@ public class Pawn extends Figure {
                 movement = "diagonal";
             }
 
+            boolean isDouble =  sRow+2 == eRow;
+
             // check if the piece can move to the desired position regarding other pieces
             if (movement.equals("straight")){
-                if (board[eRow][eCol] == null && !canGo2){
+                if (board[eRow][eCol] == null && !isDouble){
+                    return true;
+                }
+                else if (board[eRow][eCol] == null && board[eRow-1][eCol] == null){
                     return true;
                 }
                 else {
@@ -72,22 +80,24 @@ public class Pawn extends Figure {
             }
             else {
                 if (board[eRow][eCol] == null){
+                    System.out.println("Can't go there 5");
                     return false;
                 }
                 else if (board[eRow][eCol].getColour().equals("white")){
+                    System.out.println("Can't go there 6");
                     return false;
                 }
                 else if (board[eRow][eCol].getColour().equals("black")){
+                    System.out.println("Can go there 2");
                     return true;
                 }
             }
 
-            if (canGo2 && board[eRow-1][eCol] != null){
-                return false;
-            }
+
 
         }
 
+        System.out.println("went through");
         return true;
 
     }
