@@ -1,3 +1,4 @@
+import pieces.Bishop;
 import pieces.Figure;
 import pieces.Pawn;
 import pieces.Rook;
@@ -207,7 +208,19 @@ public class Chess extends Frame {
         Figure[][] board = new Figure[8][8];
         initPawns(board);
         initRooks(board);
+        initBishops(board);
         return board;
+    }
+
+    private static void initBishops(Figure[][] board){
+        Bishop bishopW1 = new Bishop("white", 0, 1);
+        Bishop bishopW2 = new Bishop("white", 0, 6);
+        board[bishopW1.getRow()][bishopW1.getCol()] = bishopW1;
+        board[bishopW2.getRow()][bishopW2.getCol()] = bishopW2;
+        Bishop bishopB1 = new Bishop("black", 7, 1);
+        Bishop bishopB2 = new Bishop("black", 7, 6);
+        board[bishopB1.getRow()][bishopB1.getCol()] = bishopB1;
+        board[bishopB2.getRow()][bishopB2.getCol()] = bishopB2;
     }
 
     private static void initRooks(Figure[][] board){
