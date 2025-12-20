@@ -42,6 +42,7 @@ public class Bishop extends Figure{
             int i = 1;
             while (sRow+i < 8 && sCol+i < 8){
                 if (board[sRow+i][sCol+i] != null){
+                    System.out.println("bottom right");
                     return false;
                 }
                 i++;
@@ -50,7 +51,9 @@ public class Bishop extends Figure{
         else if (movement.equals("BOTTOM_LEFT")){
             int i = 1;
             while (sRow+i < 8 && sCol-i >= 0){
-                if (board[sRow+i][sRow-i] != null){
+                System.out.println(i);
+                if (board[sRow+i][sCol-i] != null){
+                    System.out.println("bottom left");
                     return false;
                 }
                 i++;
@@ -60,6 +63,7 @@ public class Bishop extends Figure{
             int i = 1;
             while (sRow-i >= 0 && sCol+i < 8){
                 if (board[sRow-i][sCol+i] != null){
+                    System.out.println("up right");
                     return false;
                 }
                 i++;
@@ -69,6 +73,7 @@ public class Bishop extends Figure{
             int i = 1;
             while (sRow-i >= 0 && sCol-i >= 0){
                 if (board[sRow-i][sCol-i] != null){
+                    System.out.println("up left");
                     return false;
                 }
                 i++;

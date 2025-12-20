@@ -168,8 +168,9 @@ public class Chess extends Frame {
             return;
         }
 
+        Figure figure = board[sRow][sCol];
 
-        if (board[sRow][sCol] instanceof Pawn pawn){ // check if selected piece is a pawn
+        if (figure instanceof Pawn pawn){ // check if selected piece is a pawn
             if (pawn.getType().equals("pawnW") && pawn.isPossibleW(eRow, eCol, board) && turn.getText().equals("WHITE")){
                 pawn.move(eRow, eCol, board);
                 turn.setText("BLACK");
@@ -179,13 +180,23 @@ public class Chess extends Frame {
                 turn.setText("WHITE");
             }
         }
-        else if (board[sRow][sCol] instanceof Rook rook){
+        else if (figure instanceof Rook rook){
             if (rook.getType().equals("rookW") && rook.isPossible(eRow, eCol, board) && turn.getText().equals("WHITE")){
                 rook.move(eRow, eCol, board);
                 turn.setText("BLACK");
             }
             else if (rook.getType().equals("rookB") && rook.isPossible(eRow, eCol, board) && turn.getText().equals("BLACK")){
                 rook.move(eRow, eCol, board);
+                turn.setText("WHITE");
+            }
+        }
+        else if (figure instanceof Bishop bishop){
+            if (bishop.getType().equals("BishW") && bishop.isPossible(eRow, eCol, board) && turn.getText().equals("WHITE")){
+                bishop.move(eRow, eCol, board);
+                turn.setText("BLACK");
+            }
+            else if (bishop.getType().equals("BishB") && bishop.isPossible(eRow, eCol, board) && turn.getText().equals("BLACK")){
+                bishop.move(eRow, eCol, board);
                 turn.setText("WHITE");
             }
         }
