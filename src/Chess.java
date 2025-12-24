@@ -16,24 +16,85 @@ import java.awt.event.*;
 
 public class Chess extends Frame {
     // start attributes
+    Boolean pickStart = true;
+    Boolean canMove = false;
     private Button bmove = new Button();
     private Button bStart = new Button();
-    private Label lchoosepiece = new Label();
-    private Label lmoveto = new Label();
-
-    private Label row = new Label();
-    private Label col = new Label();
 
     private Label turn = new Label();
 
-    private TextField startC = new TextField();
-    private TextField endC = new TextField();
-
-    private TextField startR = new TextField();
-    private TextField endR = new TextField();
-    private Label colour = new Label();
     Figure[][] board = initialize();
     boolean isStarted = false;
+
+    private int startR = -1;
+    private int startC = -1;
+    private int endR = -1;
+    private int endC = -1;
+
+    private Button field0A = new Button();
+    private Button field0B = new Button();
+    private Button field0C = new Button();
+    private Button field0D = new Button();
+    private Button field0E = new Button();
+    private Button field0F = new Button();
+    private Button field0G = new Button();
+    private Button field0H = new Button();
+    private Button field1A = new Button();
+    private Button field1B = new Button();
+    private Button field1C = new Button();
+    private Button field1D = new Button();
+    private Button field1E = new Button();
+    private Button field1F = new Button();
+    private Button field1G = new Button();
+    private Button field1H = new Button();
+    private Button field2A = new Button();
+    private Button field2B = new Button();
+    private Button field2C = new Button();
+    private Button field2D = new Button();
+    private Button field2E = new Button();
+    private Button field2F = new Button();
+    private Button field2G = new Button();
+    private Button field2H = new Button();
+    private Button field3A = new Button();
+    private Button field3B = new Button();
+    private Button field3C = new Button();
+    private Button field3D = new Button();
+    private Button field3E = new Button();
+    private Button field3F = new Button();
+    private Button field3G = new Button();
+    private Button field3H = new Button();
+    private Button field4A = new Button();
+    private Button field4B = new Button();
+    private Button field4C = new Button();
+    private Button field4D = new Button();
+    private Button field4E = new Button();
+    private Button field4F = new Button();
+    private Button field4G = new Button();
+    private Button field4H = new Button();
+    private Button field5A = new Button();
+    private Button field5B = new Button();
+    private Button field5C = new Button();
+    private Button field5D = new Button();
+    private Button field5E = new Button();
+    private Button field5F = new Button();
+    private Button field5G = new Button();
+    private Button field5H = new Button();
+    private Button field6A = new Button();
+    private Button field6B = new Button();
+    private Button field6C = new Button();
+    private Button field6D = new Button();
+    private Button field6E = new Button();
+    private Button field6F = new Button();
+    private Button field6G = new Button();
+    private Button field6H = new Button();
+    private Button field7A = new Button();
+    private Button field7B = new Button();
+    private Button field7C = new Button();
+    private Button field7D = new Button();
+    private Button field7E = new Button();
+    private Button field7F = new Button();
+    private Button field7G = new Button();
+    private Button field7H = new Button();
     // end attributes
 
     public Chess() {
@@ -42,8 +103,8 @@ public class Chess extends Frame {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent evt) { dispose(); }
         });
-        int frameWidth = 312;
-        int frameHeight = 280;
+        int frameWidth = 800;
+        int frameHeight = 400;
         setSize(frameWidth, frameHeight);
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (d.width - getSize().width) / 2;
@@ -54,7 +115,7 @@ public class Chess extends Frame {
         Panel cp = new Panel(null);
         add(cp);
         // start components
-        bmove.setBounds(104, 168, 80, 24);
+        bmove.setBounds(16, 50, 80, 24);
         bmove.setFont(new Font("Dialog", Font.PLAIN, 11));
         bmove.setLabel("move");
         bmove.addActionListener(new ActionListener() {
@@ -64,7 +125,7 @@ public class Chess extends Frame {
         });
         cp.add(bmove);
 
-        bStart.setBounds(104, 200, 80, 24);
+        bStart.setBounds(16, 80, 80, 24);
         bStart.setFont(new Font("Dialog", Font.PLAIN, 11));
         bStart.setLabel("start");
         bStart.addActionListener(new ActionListener() {
@@ -74,56 +135,828 @@ public class Chess extends Frame {
         });
         cp.add(bStart);
 
-        lchoosepiece.setBounds(16, 40, 80, 24);
-        lchoosepiece.setFont(new Font("Dialog", Font.PLAIN, 11));
-        lchoosepiece.setText("choose piece:");
-        cp.add(lchoosepiece);
+
 
         turn.setBounds(16, 10, 80, 24);
         turn.setFont(new Font("Dialog", Font.PLAIN, 14));
         turn.setText("WHITE");
         cp.add(turn);
 
-        lmoveto.setBounds(16, 80, 80, 24);
-        lmoveto.setFont(new Font("Dialog", Font.PLAIN, 11));
-        lmoveto.setText("move to:");
-        cp.add(lmoveto);
 
-        row.setBounds(120, 15, 80, 24);
-        row.setFont(new Font("Dialog", Font.PLAIN, 11));
-        row.setText("Row");
-        cp.add(row);
+        // cinema
 
-        col.setBounds(220, 15, 80, 24);
-        col.setFont(new Font("Dialog", Font.PLAIN, 11));
-        col.setText("Col");
-        cp.add(col);
+        field0A.setBounds(180, 80, 60, 24);
+        field0A.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field0A.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                field0A_Action(e, 0, 0);
+            }
+        });
+        cp.add(field0A);
 
-        startR.setBounds(120, 40, 80, 24);
-        startR.setFont(new Font("Dialog", Font.PLAIN, 11));
-        cp.add(startR);
+        field0B.setBounds(240, 80, 60, 24);
+        field0B.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field0B.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field0B_Action(e);
+            }
+        });
+        cp.add(field0B);
 
-        startC.setBounds(220, 40, 80, 24);
-        startC.setFont(new Font("Dialog", Font.PLAIN, 11));
-        cp.add(startC);
+        field0C.setBounds(300, 80, 60, 24);
+        field0C.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field0C.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field0C_Action(e);
+            }
+        });
+        cp.add(field0C);
+        
+        field0D.setBounds(360, 80, 60, 24);
+        field0D.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field0D.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field0D_Action(e);
+            }
+        });
+        cp.add(field0D);
 
-        endR.setBounds(120, 80, 80, 24);
-        endR.setFont(new Font("Dialog", Font.PLAIN, 11));
-        cp.add(endR);
+        field0E.setBounds(420, 80, 60, 24);
+        field0E.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field0E.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field0E_Action(e);
+            }
+        });
+        cp.add(field0E);
+        
+        field0F.setBounds(480, 80, 60, 24);
+        field0F.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field0F.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field0F_Action(e);
+            }
+        });
+        cp.add(field0F);
+        
+        field0G.setBounds(540, 80, 60, 24);
+        field0G.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field0G.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field0G_Actione(e);
+            }
+        });
+        cp.add(field0G);
+        
+        field0H.setBounds(600, 80, 60, 24);
+        field0H.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field0H.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field0H_Action(e);
+            }
+        });
+        cp.add(field0H);
+        
+        field1A.setBounds(180, 104, 60, 24);
+        field1A.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field1A.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field1A_Action(e, 1, 0);
+            }
+        });
+        cp.add(field1A);
+        
+        field1B.setBounds(240, 104, 60, 24);
+        field1B.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field1B.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field1B_Action(e);
+            }
+        });
+        cp.add(field1B);
+        
+        field1C.setBounds(300, 104, 60, 24);
+        field1C.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field1C.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                f1c_Action(e);
+            }
+        });
+        cp.add(field1C);
+        
+        field1D.setBounds(360, 104, 60, 24);
+        field1D.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field1D.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field1D_Action(e);
+            }
+        });
+        cp.add(field1D);
+        
+        field1E.setBounds(420, 104, 60, 24);
+        field1E.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field1E.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field1E_Action(e);
+            }
+        });
+        cp.add(field1E);
+        
+        field1F.setBounds(480, 104, 60, 24);
+        field1F.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field1F.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field1F_Action(e);
+            }
+        });
+        cp.add(field1F);
+        
+        field1G.setBounds(540, 104, 60, 24);
+        field1G.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field1G.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field1G_Action(e);
+            }
+        });
+        cp.add(field1G);
+        
+        field1H.setBounds(600, 104, 60, 24);
+        field1H.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field1H.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field1H_Action(e);
+            }
+        });
+        cp.add(field1H);
+        
+        field2A.setBounds(180, 128, 60, 24);
+        field2A.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field2A.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field2A_Actione(e, 2, 0);
+            }
+        });
+        cp.add(field2A);
 
-        endC.setBounds(220, 80, 80, 24);
-        endC.setFont(new Font("Dialog", Font.PLAIN, 11));
-        cp.add(endC);
+        field2B.setBounds(240, 128, 60, 24);
+        field2B.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field2B.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field2B_Actione(e);
+            }
+        });
+        cp.add(field2B);
 
+        field2C.setBounds(300, 128, 60, 24);
+        field2C.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field2C.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field2C_Actione(e);
+            }
+        });
+        cp.add(field2C);
 
-        colour.setBounds(16, 8, 80, 24);
-        colour.setFont(new Font("Dialog", Font.PLAIN, 11));
-        colour.setText("");
-        cp.add(colour);
+        field2D.setBounds(360, 128, 60, 24);
+        field2D.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field2D.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field2D_Action(e);
+            }
+        });
+        cp.add(field2D);
+
+        field2E.setBounds(420, 128, 60, 24);
+        field2E.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field2E.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field2E_Action(e);
+            }
+        });
+        cp.add(field2E);
+        
+        field2F.setBounds(480, 128, 60, 24);
+        field2F.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field2F.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field2F_Actione(e);
+            }
+        });
+        cp.add(field2F);
+        
+        field2G.setBounds(540, 128, 60, 24);
+        field2G.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field2G.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field2G_Action(e);
+            }
+        });
+        cp.add(field2G);
+        
+        field2H.setBounds(600, 128, 60, 24);
+        field2H.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field2H.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field2H_Action(e);
+            }
+        });
+        cp.add(field2H);
+
+        field3A.setBounds(180, 152, 60, 24);
+        field3A.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field3A.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field3A_Action(e, 3, 0);
+            }
+        });
+        cp.add(field3A);
+
+        field3B.setBounds(240, 152, 60, 24);
+        field3B.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field3B.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field3B_Action(e);
+            }
+        });
+        cp.add(field3B);
+        
+        field3C.setBounds(300, 152, 60, 24);
+        field3C.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field3C.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field3C_Action(e);
+            }
+        });
+        cp.add(field3C);
+        
+        field3D.setBounds(360, 152, 60, 24);
+        field3D.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field3D.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field3D_Action(e);
+            }
+        });
+        cp.add(field3D);
+        
+        field3E.setBounds(420, 152, 60, 24);
+        field3E.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field3E.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field3E_Action(e);
+            }
+        });
+        cp.add(field3E);
+        
+        field3F.setBounds(480, 152, 60, 24);
+        field3F.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field3F.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field3F_Action(e);
+            }
+        });
+        cp.add(field3F);
+        
+        field3G.setBounds(540, 152, 60, 24);
+        field3G.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field3G.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field3G_Action(e);
+            }
+        });
+        cp.add(field3G);
+        
+        field3H.setBounds(600, 152, 60, 24);
+        field3H.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field3H.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field3H_Action(e);
+            }
+        });
+        cp.add(field3H);
+
+        field4A.setBounds(180, 176, 60, 24);
+        field4A.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field4A.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field4A_Action(e);
+            }
+        });
+        cp.add(field4A);
+
+        field4B.setBounds(240, 176, 60, 24);
+        field4B.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field4B.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field4B_Action(e);
+            }
+        });
+        cp.add(field4B);
+
+        field4C.setBounds(300, 176, 60, 24);
+        field4C.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field4C.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field4C_Action(e);
+            }
+        });
+        cp.add(field4C);
+
+        field4D.setBounds(360, 176, 60, 24);
+        field4D.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field4D.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field4D_Action(e);
+            }
+        });
+        cp.add(field4D);
+
+        field4E.setBounds(420, 176, 60, 24);
+        field4E.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field4E.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field4E_Action(e);
+            }
+        });
+        cp.add(field4E);
+
+        field4F.setBounds(480, 176, 60, 24);
+        field4F.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field4F.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field4F_Action(e);
+            }
+        });
+        cp.add(field4F);
+
+        field4G.setBounds(540, 176, 60, 24);
+        field4G.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field4G.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field4G_Action(e);
+            }
+        });
+        cp.add(field4G);
+
+        field4H.setBounds(600, 176, 60, 24);
+        field4H.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field4H.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field4H_Action(e);
+            }
+        });
+        cp.add(field4H);
+
+        field5A.setBounds(180, 200, 60, 24);
+        field5A.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field5A.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field5A_Action(e);
+            }
+        });
+        cp.add(field5A);
+
+        field5B.setBounds(240, 200, 60, 24);
+        field5B.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field5B.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field5B_Action(e);
+            }
+        });
+        cp.add(field5B);
+
+        field5C.setBounds(300, 200, 60, 24);
+        field5C.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field5C.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field5C_Action(e);
+            }
+        });
+        cp.add(field5C);
+
+        field5D.setBounds(360, 200, 60, 24);
+        field5D.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field5D.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field5D_Action(e);
+            }
+        });
+        cp.add(field5D);
+
+        field5E.setBounds(420, 200, 60, 24);
+        field5E.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field5E.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field5E_Action(e);
+            }
+        });
+        cp.add(field5E);
+
+        field5F.setBounds(480, 200, 60, 24);
+        field5F.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field5F.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field5F_Action(e);
+            }
+        });
+        cp.add(field5F);
+
+        field5G.setBounds(540, 200, 60, 24);
+        field5G.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field5G.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field5G_Action(e);
+            }
+        });
+        cp.add(field5G);
+
+        field5H.setBounds(600, 200, 60, 24);
+        field5H.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field5H.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field5H_Action(e);
+            }
+        });
+        cp.add(field5H);
+
+        field6A.setBounds(180, 224, 60, 24);
+        field6A.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field6A.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field6A_Action(e);
+            }
+        });
+        cp.add(field6A);
+
+        field6B.setBounds(240, 224, 60, 24);
+        field6B.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field6B.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field6B_Action(e);
+            }
+        });
+        cp.add(field6B);
+
+        field6C.setBounds(300, 224, 60, 24);
+        field6C.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field6C.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field6C_Action(e);
+            }
+        });
+        cp.add(field6C);
+
+        field6D.setBounds(360, 224, 60, 24);
+        field6D.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field6D.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field6D_Action(e);
+            }
+        });
+        cp.add(field6D);
+
+        field6E.setBounds(420, 224, 60, 24);
+        field6E.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field6E.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field6E_Action(e);
+            }
+        });
+        cp.add(field6E);
+
+        field6F.setBounds(480, 224, 60, 24);
+        field6F.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field6F.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field6F_Action(e);
+            }
+        });
+        cp.add(field6F);
+
+        field6G.setBounds(540, 224, 60, 24);
+        field6G.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field6G.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field6G_Action(e);
+            }
+        });
+        cp.add(field6G);
+
+        field6H.setBounds(600, 224, 60, 24);
+        field6H.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field6H.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field6H_Action(e);
+            }
+        });
+        cp.add(field6H);
+
+        field7A.setBounds(180, 248, 60, 24);
+        field7A.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field7A.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field7A_Action(e);
+            }
+        });
+        cp.add(field7A);
+
+        field7B.setBounds(240, 248, 60, 24);
+        field7B.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field7B.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field7B_Action(e);
+            }
+        });
+        cp.add(field7B);
+
+        field7C.setBounds(300, 248, 60, 24);
+        field7C.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field7C.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field7C_Action(e);
+            }
+        });
+        cp.add(field7C);
+        
+        field7D.setBounds(360, 248, 60, 24);
+        field7D.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field7D.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field7D_Action(e);
+            }
+        });
+        cp.add(field7D);
+
+        field7E.setBounds(420, 248, 60, 24);
+        field7E.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field7E.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field7E_Action(e);
+            }
+        });
+        cp.add(field7E);
+
+        field7F.setBounds(480, 248, 60, 24);
+        field7F.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field7F.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field7F_Action(e);
+            }
+        });
+        cp.add(field7F);
+
+        field7G.setBounds(540, 248, 60, 24);
+        field7G.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field7G.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field7G_Action(e);
+            }
+        });
+        cp.add(field7G);
+
+        field7H.setBounds(600, 248, 60, 24);
+        field7H.setFont(new Font("Dialog", Font.PLAIN, 11));
+        field7H.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                field7H_Action(e);
+            }
+        });
+        cp.add(field7H);
+        
         // end components
 
         setVisible(true);
     } // end of public Chess
+
+    private void field7H_Action(ActionEvent e) {
+    }
+
+    private void field7G_Action(ActionEvent e) {
+    }
+
+    private void field7F_Action(ActionEvent e) {
+    }
+
+    private void field7E_Action(ActionEvent e) {
+    }
+
+    private void field7D_Action(ActionEvent e) {
+    }
+
+    private void field7C_Action(ActionEvent e) {
+    }
+
+    private void field7B_Action(ActionEvent e) {
+    }
+
+    private void field7A_Action(ActionEvent e) {
+    }
+
+    private void field6H_Action(ActionEvent e) {
+    }
+
+    private void field6G_Action(ActionEvent e) {
+    }
+
+    private void field6F_Action(ActionEvent e) {
+    }
+
+    private void field6E_Action(ActionEvent e) {
+    }
+
+    private void field6D_Action(ActionEvent e) {
+    }
+
+    private void field6C_Action(ActionEvent e) {
+    }
+
+    private void field6B_Action(ActionEvent e) {
+    }
+
+    private void field6A_Action(ActionEvent e) {
+    }
+
+    private void field5H_Action(ActionEvent e) {
+    }
+
+    private void field5G_Action(ActionEvent e) {
+    }
+
+    private void field5F_Action(ActionEvent e) {
+    }
+
+    private void field5E_Action(ActionEvent e) {
+    }
+
+    private void field5D_Action(ActionEvent e) {
+    }
+
+    private void field5C_Action(ActionEvent e) {
+    }
+
+    private void field5B_Action(ActionEvent e) {
+    }
+
+    private void field5A_Action(ActionEvent e) {
+    }
+
+    private void field4H_Action(ActionEvent e) {
+    }
+
+    private void field4G_Action(ActionEvent e) {
+    }
+
+    private void field4F_Action(ActionEvent e) {
+    }
+
+    private void field4E_Action(ActionEvent e) {
+    }
+
+    private void field4D_Action(ActionEvent e) {
+    }
+
+    private void field4C_Action(ActionEvent e) {
+    }
+
+    private void field4B_Action(ActionEvent e) {
+    }
+
+    private void field4A_Action(ActionEvent e) {
+    }
+
+    private void field3H_Action(ActionEvent e) {
+    }
+
+    private void field3G_Action(ActionEvent e) {
+    }
+
+    private void field3F_Action(ActionEvent e) {
+    }
+
+    private void field3E_Action(ActionEvent e) {
+    }
+
+    private void field3D_Action(ActionEvent e) {
+    }
+
+    private void field3C_Action(ActionEvent e) {
+    }
+
+    private void field3B_Action(ActionEvent e) {
+    }
+
+    private void field3A_Action(ActionEvent e, int row, int col) {
+        if (pickStart){
+            startR = row;
+            startC = col;
+            pickStart = false;
+        }
+        else {
+            endR = row;
+            endC = col;
+            canMove = true;
+        }
+    }
+
+    private void field2H_Action(ActionEvent e) {
+    }
+
+    private void field2G_Action(ActionEvent e) {
+    }
+
+    private void field2F_Actione(ActionEvent e) {
+    }
+
+    private void field2E_Action(ActionEvent e) {
+    }
+
+    private void field2D_Action(ActionEvent e) {
+    }
+
+    private void field2C_Actione(ActionEvent e) {
+    }
+
+    private void field2B_Actione(ActionEvent e) {
+    }
+
+    private void field2A_Actione(ActionEvent e, int row, int col) {
+        if (pickStart){
+            startR = row;
+            startC = col;
+            pickStart = false;
+        }
+        else {
+            endR = row;
+            endC = col;
+            canMove = true;
+        }
+    }
+
+    private void field1H_Action(ActionEvent e) {
+    }
+
+    private void field1G_Action(ActionEvent e) {
+    }
+
+    private void field1F_Action(ActionEvent e) {
+    }
+
+    private void field1E_Action(ActionEvent e) {
+    }
+
+    private void field1D_Action(ActionEvent e) {
+    }
+
+    private void f1c_Action(ActionEvent e) {
+    }
+
+    private void field1B_Action(ActionEvent e) {
+    }
+
+    private void field1A_Action(ActionEvent e, int row, int col) {
+        if (pickStart){
+            startR = row;
+            startC = col;
+            pickStart = false;
+        }
+        else {
+            endR = row;
+            endC = col;
+            canMove = true;
+        }
+    }
+
+    private void field0H_Action(ActionEvent e) {
+    }
+
+    private void field0G_Actione(ActionEvent e) {
+    }
+
+    private void field0F_Action(ActionEvent e) {
+    }
+
+    private void field0E_Action(ActionEvent e) {
+    }
+
+    private void field0D_Action(ActionEvent e) {
+    }
+
+    private void field0C_Action(ActionEvent e) {
+    }
+
+    private void field0B_Action(ActionEvent e) {
+    }
+
+    private void field0A_Action(ActionEvent e, int row, int col) {
+        if (pickStart){
+            startR = row;
+            startC = col;
+            pickStart = false;
+        }
+        else {
+            endR = row;
+            endC = col;
+            canMove = true;
+        }
+    }
 
     // start methods
 
@@ -137,74 +970,85 @@ public class Chess extends Frame {
             return;
         }
 
-        if (startR.getText().length() != 1 || startC.getText().length() != 1
-            || endR.getText().length() != 1 || endC.getText().length() != 1){ // check for invalid input
-            System.out.println("Invalid input, only one digit per field");
+        if (!canMove){
+            System.out.println("Finish on deciding your move.");
             return;
         }
 
-        if (!Character.isDigit(startR.getText().charAt(0)) || !Character.isDigit(startC.getText().charAt(0))
-            || !Character.isDigit(endR.getText().charAt(0)) || !Character.isDigit(endC.getText().charAt(0))){ // check for invalid input
-            System.out.println("Invalid input, use digits");
-            return;
-        }
+//        if (startR.getText().length() != 1 || startC.getText().length() != 1
+//            || endR.getText().length() != 1 || endC.getText().length() != 1){ // check for invalid input
+//            System.out.println("Invalid input, only one digit per field");
+//            return;
+//        }
+//
+//        if (!Character.isDigit(startR.getText().charAt(0)) || !Character.isDigit(startC.getText().charAt(0))
+//            || !Character.isDigit(endR.getText().charAt(0)) || !Character.isDigit(endC.getText().charAt(0))){ // check for invalid input
+//            System.out.println("Invalid input, use digits");
+//            return;
+//        }
 
-        int sRow = startR.getText().charAt(0)-'1'+1;
-        int sCol = startC.getText().charAt(0)-'1'+1;
-        int eRow = endR.getText().charAt(0)-'1'+1;
-        int eCol = endC.getText().charAt(0)-'1'+1;
+//        int sRow = startR.getText().charAt(0)-'1'+1;
+//        int sCol = startC.getText().charAt(0)-'1'+1;
+//        int eRow = endR.getText().charAt(0)-'1'+1;
+//        int eCol = endC.getText().charAt(0)-'1'+1;
 
 
-        if (board[sRow][sCol] == null){ // check if there is a piece at start-coordinates
+        if (board[startR][startC] == null){ // check if there is a piece at start-coordinates
             System.out.println("There's no piece there.");
             return;
         }
-        else if (sRow > 7 || sRow < 0 || eRow > 7 || eRow < 0){ // check if row-coordinates are out of bounds
+        else if (startR > 7 || startR < 0 || endR > 7 || endR < 0){ // check if row-coordinates are out of bounds
             System.out.println("You can't move outside of the chessboard.");
             return;
         }
-        else if (sCol > 7 || sCol < 0 || eCol > 7 || eCol < 0){ // check if col-coordinates are out of bounds
+        else if (startC > 7 || startC < 0 || endC > 7 || endC < 0){ // check if col-coordinates are out of bounds
             System.out.println("You can't move outside of the chessboard.");
             return;
         }
 
-        Figure figure = board[sRow][sCol];
+        Figure figure = board[startR][startC];
+        canMove = true;
 
         if (figure instanceof Pawn pawn){ // check if selected piece is a pawn
-            if (pawn.getType().equals("pawnW") && pawn.isPossibleW(eRow, eCol, board) && turn.getText().equals("WHITE")){
-                pawn.move(eRow, eCol, board);
+            if (pawn.getType().equals("pawnW") && pawn.isPossibleW(endR, endC, board) && turn.getText().equals("WHITE")){
+                pawn.move(endR, endC, board);
                 turn.setText("BLACK");
             }
-            else if (pawn.getType().equals("pawnB") && pawn.isPossibleB(eRow, eCol, board) && turn.getText().equals("BLACK")){
-                pawn.move(eRow, eCol, board);
+            else if (pawn.getType().equals("pawnB") && pawn.isPossibleB(endR, endC, board) && turn.getText().equals("BLACK")){
+                pawn.move(endR, endC, board);
                 turn.setText("WHITE");
             }
         }
         else if (figure instanceof Rook rook){
-            if (rook.getType().equals("rookW") && rook.isPossible(eRow, eCol, board) && turn.getText().equals("WHITE")){
-                rook.move(eRow, eCol, board);
+            if (rook.getType().equals("rookW") && rook.isPossible(endR, endC, board) && turn.getText().equals("WHITE")){
+                rook.move(endR, endC, board);
                 turn.setText("BLACK");
             }
-            else if (rook.getType().equals("rookB") && rook.isPossible(eRow, eCol, board) && turn.getText().equals("BLACK")){
-                rook.move(eRow, eCol, board);
+            else if (rook.getType().equals("rookB") && rook.isPossible(endR, endC, board) && turn.getText().equals("BLACK")){
+                rook.move(endR, endC, board);
                 turn.setText("WHITE");
             }
         }
         else if (figure instanceof Bishop bishop){
-            if (bishop.getType().equals("BishW") && bishop.isPossible(eRow, eCol, board) && turn.getText().equals("WHITE")){
-                bishop.move(eRow, eCol, board);
+            if (bishop.getType().equals("BishW") && bishop.isPossible(endR, endC, board) && turn.getText().equals("WHITE")){
+                bishop.move(endR, endC, board);
                 turn.setText("BLACK");
             }
-            else if (bishop.getType().equals("BishB") && bishop.isPossible(eRow, eCol, board) && turn.getText().equals("BLACK")){
-                bishop.move(eRow, eCol, board);
+            else if (bishop.getType().equals("BishB") && bishop.isPossible(endR, endC, board) && turn.getText().equals("BLACK")){
+                bishop.move(endR, endC, board);
                 turn.setText("WHITE");
             }
         }
 
+        // set text for buttons
+
+        initButtons(board);
+
+
         System.out.println(printBoard(board));
     } // end of bmove_ActionPerformed
 
-    public void bstart_ActionPerformed(ActionEvent evz){
+    public void bstart_ActionPerformed(ActionEvent evt){
         if (isStarted){
             System.out.println("You already started the game, idiot.");
             return;
@@ -212,8 +1056,69 @@ public class Chess extends Frame {
         isStarted = true;
         System.out.println(printBoard(board));
         bStart.setVisible(false);
+        initButtons(board);
     }
 
+    private void initButtons(Figure[][] board){
+        if (board[0][0] == null){
+            field0A.setLabel("_____");
+        }
+        else {
+            field0A.setLabel(board[0][0].getType());
+        }
+
+        if (board[0][1] == null){
+            field0B.setLabel("_____");
+        }
+        else {
+            field0B.setLabel(board[0][1].getType());
+        }
+
+        if (board[0][2] == null){
+            field0C.setLabel("_____");
+        }
+        else {
+            field0C.setLabel(board[0][2].getType());
+        }
+
+        if (board[0][3] == null){
+            field0D.setLabel("_____");
+        }
+        else {
+            field0D.setLabel(board[0][3].getType());
+        }
+
+        if (board[0][4] == null){
+            field0E.setLabel("_____");
+        }
+        else {
+            field0E.setLabel(board[0][4].getType());
+        }
+
+        if (board[0][5] == null){
+            field0F.setLabel("_____");
+        }
+        else {
+            field0F.setLabel(board[0][5].getType());
+        }
+
+        if (board[0][6] == null){
+            field0G.setLabel("_____");
+        }
+        else {
+            field0G.setLabel(board[0][6].getType());
+        }
+
+        if (board[0][7] == null){
+            field0H.setLabel("_____");
+        }
+        else {
+            field0H.setLabel(board[0][7].getType());
+        }
+
+
+
+    }
 
     public static Figure[][] initialize(){
         Figure[][] board = new Figure[8][8];
