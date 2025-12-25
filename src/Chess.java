@@ -783,6 +783,7 @@ public class Chess extends Frame {
             startR = 7;
             startC = 7;
             pickStart = false;
+            field7H.setForeground(Color.RED);
         }
         else {
             endR = 7;
@@ -797,6 +798,7 @@ public class Chess extends Frame {
             startR = 7;
             startC = 6;
             pickStart = false;
+            field7G.setForeground(Color.RED);
         }
         else {
             endR = 7;
@@ -811,6 +813,7 @@ public class Chess extends Frame {
             startR = 7;
             startC = 5;
             pickStart = false;
+            field7F.setForeground(Color.RED);
         }
         else {
             endR = 7;
@@ -825,6 +828,7 @@ public class Chess extends Frame {
             startR = 7;
             startC = 4;
             pickStart = false;
+            field7E.setForeground(Color.RED);
         }
         else {
             endR = 7;
@@ -839,6 +843,7 @@ public class Chess extends Frame {
             startR = 7;
             startC = 3;
             pickStart = false;
+            field7D.setForeground(Color.RED);
         }
         else {
             endR = 7;
@@ -853,6 +858,7 @@ public class Chess extends Frame {
             startR = 7;
             startC = 2;
             pickStart = false;
+            field7C.setForeground(Color.RED);
         }
         else {
             endR = 7;
@@ -867,6 +873,7 @@ public class Chess extends Frame {
             startR = 7;
             startC = 1;
             pickStart = false;
+            field7B.setForeground(Color.RED);
         }
         else {
             endR = 7;
@@ -881,6 +888,7 @@ public class Chess extends Frame {
             startR = 7;
             startC = 0;
             pickStart = false;
+            field7A.setForeground(Color.RED);
         }
         else {
             endR = 7;
@@ -895,6 +903,7 @@ public class Chess extends Frame {
             startR = 6;
             startC = 7;
             pickStart = false;
+            field6H.setForeground(Color.RED);
         }
         else {
             endR = 6;
@@ -909,6 +918,7 @@ public class Chess extends Frame {
             startR = 6;
             startC = 6;
             pickStart = false;
+            field6G.setForeground(Color.RED);
         }
         else {
             endR = 6;
@@ -923,6 +933,7 @@ public class Chess extends Frame {
             startR = 6;
             startC = 5;
             pickStart = false;
+            field6F.setForeground(Color.RED);
         }
         else {
             endR = 6;
@@ -937,6 +948,7 @@ public class Chess extends Frame {
             startR = 6;
             startC = 4;
             pickStart = false;
+            field6E.setForeground(Color.RED);
         }
         else {
             endR = 6;
@@ -951,6 +963,7 @@ public class Chess extends Frame {
             startR = 6;
             startC = 3;
             pickStart = false;
+            field6D.setForeground(Color.RED);
         }
         else {
             endR = 6;
@@ -965,6 +978,7 @@ public class Chess extends Frame {
             startR = 6;
             startC = 2;
             pickStart = false;
+            field6C.setForeground(Color.RED);
         }
         else {
             endR = 6;
@@ -979,6 +993,7 @@ public class Chess extends Frame {
             startR = 6;
             startC = 1;
             pickStart = false;
+            field6B.setForeground(Color.RED);
         }
         else {
             endR = 6;
@@ -993,6 +1008,7 @@ public class Chess extends Frame {
             startR = 6;
             startC = 0;
             pickStart = false;
+            field6A.setForeground(Color.RED);
         }
         else {
             endR = 6;
@@ -1007,6 +1023,7 @@ public class Chess extends Frame {
             startR = 5;
             startC = 7;
             pickStart = false;
+            field5H.setForeground(Color.RED);
         }
         else {
             endR = 5;
@@ -1021,6 +1038,7 @@ public class Chess extends Frame {
             startR = 5;
             startC = 6;
             pickStart = false;
+            field5G.setForeground(Color.RED);
         }
         else {
             endR = 5;
@@ -1035,6 +1053,7 @@ public class Chess extends Frame {
             startR = 5;
             startC = 5;
             pickStart = false;
+            field5F.setForeground(Color.RED);
         }
         else {
             endR = 5;
@@ -1049,6 +1068,7 @@ public class Chess extends Frame {
             startR = 5;
             startC = 4;
             pickStart = false;
+            field5E.setForeground(Color.RED);
         }
         else {
             endR = 5;
@@ -1063,6 +1083,7 @@ public class Chess extends Frame {
             startR = 5;
             startC = 3;
             pickStart = false;
+            field5D.setForeground(Color.RED);
         }
         else {
             endR = 5;
@@ -1077,6 +1098,7 @@ public class Chess extends Frame {
             startR = 5;
             startC = 2;
             pickStart = false;
+            field5C.setForeground(Color.RED);
         }
         else {
             endR = 5;
@@ -1091,6 +1113,7 @@ public class Chess extends Frame {
             startR = 5;
             startC = 1;
             pickStart = false;
+            field5B.setForeground(Color.RED);
         }
         else {
             endR = 5;
@@ -1105,6 +1128,7 @@ public class Chess extends Frame {
             startR = 5;
             startC = 0;
             pickStart = false;
+            field5A.setForeground(Color.RED);
         }
         else {
             endR = 5;
@@ -1119,6 +1143,7 @@ public class Chess extends Frame {
             startR = 4;
             startC = 7;
             pickStart = false;
+            field4H.setForeground(Color.RED);
         }
         else {
             endR = 4;
@@ -1133,6 +1158,7 @@ public class Chess extends Frame {
             startR = 4;
             startC = 6;
             pickStart = false;
+            field4G.setForeground(Color.RED);
         }
         else {
             endR = 4;
@@ -1147,6 +1173,7 @@ public class Chess extends Frame {
             startR = 4;
             startC = 5;
             pickStart = false;
+            field4F.setForeground(Color.RED);
         }
         else {
             endR = 4;
@@ -1161,6 +1188,7 @@ public class Chess extends Frame {
             startR = 4;
             startC = 4;
             pickStart = false;
+            field4E.setForeground(Color.RED);
         }
         else {
             endR = 4;
@@ -1175,6 +1203,7 @@ public class Chess extends Frame {
             startR = 4;
             startC = 3;
             pickStart = false;
+            field4D.setForeground(Color.RED);
         }
         else {
             endR = 4;
@@ -1189,6 +1218,7 @@ public class Chess extends Frame {
             startR = 4;
             startC = 2;
             pickStart = false;
+            field4C.setForeground(Color.RED);
         }
         else {
             endR = 4;
@@ -1203,6 +1233,7 @@ public class Chess extends Frame {
             startR = 4;
             startC = 1;
             pickStart = false;
+            field4B.setForeground(Color.RED);
         }
         else {
             endR = 4;
@@ -1217,6 +1248,7 @@ public class Chess extends Frame {
             startR = 4;
             startC = 0;
             pickStart = false;
+            field4A.setForeground(Color.RED);
         }
         else {
             endR = 4;
@@ -1231,6 +1263,7 @@ public class Chess extends Frame {
             startR = 3;
             startC = 7;
             pickStart = false;
+            field3H.setForeground(Color.RED);
         }
         else {
             endR = 3;
@@ -1245,6 +1278,7 @@ public class Chess extends Frame {
             startR = 3;
             startC = 6;
             pickStart = false;
+            field3G.setForeground(Color.RED);
         }
         else {
             endR = 3;
@@ -1259,6 +1293,7 @@ public class Chess extends Frame {
             startR = 3;
             startC = 5;
             pickStart = false;
+            field3F.setForeground(Color.RED);
         }
         else {
             endR = 3;
@@ -1273,6 +1308,7 @@ public class Chess extends Frame {
             startR = 3;
             startC = 4;
             pickStart = false;
+            field3E.setForeground(Color.RED);
         }
         else {
             endR = 3;
@@ -1287,6 +1323,7 @@ public class Chess extends Frame {
             startR = 3;
             startC = 3;
             pickStart = false;
+            field3D.setForeground(Color.RED);
         }
         else {
             endR = 3;
@@ -1301,6 +1338,7 @@ public class Chess extends Frame {
             startR = 3;
             startC = 2;
             pickStart = false;
+            field3C.setForeground(Color.RED);
         }
         else {
             endR = 3;
@@ -1315,6 +1353,7 @@ public class Chess extends Frame {
             startR = 3;
             startC = 1;
             pickStart = false;
+            field3B.setForeground(Color.RED);
         }
         else {
             endR = 3;
@@ -1329,6 +1368,7 @@ public class Chess extends Frame {
             startR = 3;
             startC = 0;
             pickStart = false;
+            field3A.setForeground(Color.RED);
         }
         else {
             endR = 3;
@@ -1343,6 +1383,7 @@ public class Chess extends Frame {
             startR = 2;
             startC = 7;
             pickStart = false;
+            field2H.setForeground(Color.RED);
         }
         else {
             endR = 2;
@@ -1357,6 +1398,7 @@ public class Chess extends Frame {
             startR = 2;
             startC = 6;
             pickStart = false;
+            field2G.setForeground(Color.RED);
         }
         else {
             endR = 2;
@@ -1371,6 +1413,7 @@ public class Chess extends Frame {
             startR = 2;
             startC = 5;
             pickStart = false;
+            field2F.setForeground(Color.RED);
         }
         else {
             endR = 2;
@@ -1385,6 +1428,7 @@ public class Chess extends Frame {
             startR = 2;
             startC = 4;
             pickStart = false;
+            field2E.setForeground(Color.RED);
         }
         else {
             endR = 2;
@@ -1399,6 +1443,7 @@ public class Chess extends Frame {
             startR = 2;
             startC = 3;
             pickStart = false;
+            field2D.setForeground(Color.RED);
         }
         else {
             endR = 2;
@@ -1413,6 +1458,7 @@ public class Chess extends Frame {
             startR = 2;
             startC = 2;
             pickStart = false;
+            field2C.setForeground(Color.RED);
         }
         else {
             endR = 2;
@@ -1427,6 +1473,7 @@ public class Chess extends Frame {
             startR = 2;
             startC = 1;
             pickStart = false;
+            field2B.setForeground(Color.RED);
         }
         else {
             endR = 2;
@@ -1441,6 +1488,7 @@ public class Chess extends Frame {
             startR = 2;
             startC = 0;
             pickStart = false;
+            field2A.setForeground(Color.RED);
         }
         else {
             endR = 2;
@@ -1455,6 +1503,7 @@ public class Chess extends Frame {
             startR = 1;
             startC = 7;
             pickStart = false;
+            field1H.setForeground(Color.RED);
         }
         else {
             endR = 1;
@@ -1469,6 +1518,7 @@ public class Chess extends Frame {
             startR = 1;
             startC = 6;
             pickStart = false;
+            field1G.setForeground(Color.RED);
         }
         else {
             endR = 1;
@@ -1483,6 +1533,7 @@ public class Chess extends Frame {
             startR = 1;
             startC = 5;
             pickStart = false;
+            field1F.setForeground(Color.RED);
         }
         else {
             endR = 1;
@@ -1497,6 +1548,7 @@ public class Chess extends Frame {
             startR = 1;
             startC = 4;
             pickStart = false;
+            field1E.setForeground(Color.RED);
         }
         else {
             endR = 1;
@@ -1511,6 +1563,7 @@ public class Chess extends Frame {
             startR = 1;
             startC = 3;
             pickStart = false;
+            field1D.setForeground(Color.RED);
         }
         else {
             endR = 1;
@@ -1525,6 +1578,7 @@ public class Chess extends Frame {
             startR = 1;
             startC = 2;
             pickStart = false;
+            field1C.setForeground(Color.RED);
         }
         else {
             endR = 1;
@@ -1539,6 +1593,7 @@ public class Chess extends Frame {
             startR = 1;
             startC = 1;
             pickStart = false;
+            field1B.setForeground(Color.RED);
         }
         else {
             endR = 1;
@@ -1554,6 +1609,7 @@ public class Chess extends Frame {
             startC = 0;
             pickStart = false;
             field1A.setForeground(Color.RED);
+            field1A.setForeground(Color.RED);
         }
         else {
             endR = 1;
@@ -1568,6 +1624,7 @@ public class Chess extends Frame {
             startR = 0;
             startC = 7;
             pickStart = false;
+            field0H.setForeground(Color.RED);
         }
         else {
             endR = 0;
@@ -1582,6 +1639,7 @@ public class Chess extends Frame {
             startR = 0;
             startC = 6;
             pickStart = false;
+            field0G.setForeground(Color.RED);
         }
         else {
             endR = 0;
@@ -1596,6 +1654,7 @@ public class Chess extends Frame {
             startR = 0;
             startC = 5;
             pickStart = false;
+            field0F.setForeground(Color.RED);
         }
         else {
             endR = 0;
@@ -1610,6 +1669,7 @@ public class Chess extends Frame {
             startR = 0;
             startC = 4;
             pickStart = false;
+            field0E.setForeground(Color.RED);
         }
         else {
             endR = 0;
@@ -1624,6 +1684,7 @@ public class Chess extends Frame {
             startR = 0;
             startC = 3;
             pickStart = false;
+            field0D.setForeground(Color.RED);
         }
         else {
             endR = 0;
@@ -1638,6 +1699,7 @@ public class Chess extends Frame {
             startR = 0;
             startC = 2;
             pickStart = false;
+            field0C.setForeground(Color.RED);
         }
         else {
             endR = 0;
@@ -1652,6 +1714,7 @@ public class Chess extends Frame {
             startR = 0;
             startC = 1;
             pickStart = false;
+            field0B.setForeground(Color.RED);
         }
         else {
             endR = 0;
@@ -1666,6 +1729,7 @@ public class Chess extends Frame {
             startR = 0;
             startC = 0;
             pickStart = false;
+            field0A.setForeground(Color.RED);
         }
         else {
             endR = 0;
@@ -2234,6 +2298,7 @@ public class Chess extends Frame {
         return board;
     }
 
+
     private static void initBishops(Figure[][] board){
         Bishop bishopW1 = new Bishop("white", 0, 1);
         Bishop bishopW2 = new Bishop("white", 0, 6);
@@ -2378,11 +2443,7 @@ public class Chess extends Frame {
         field7F.setForeground(Color.BLACK);
         field7G.setForeground(Color.BLACK);
         field7H.setForeground(Color.BLACK);
-
-
     }
-
-
 
     // end methods
 } // end of class Chess
