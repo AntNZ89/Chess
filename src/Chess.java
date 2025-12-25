@@ -18,17 +18,15 @@ public class Chess extends Frame {
     // start attributes
     Boolean pickStart = true;
     Boolean canMove = false;
-    private Button bStart = new Button();
-
-    private Label turn = new Label();
-
-    Figure[][] board = initialize();
-    boolean isStarted = false;
-
     private int startR = -1;
     private int startC = -1;
     private int endR = -1;
     private int endC = -1;
+    Figure[][] board = initialize();
+    boolean isStarted = false;
+
+    private Label turn = new Label();
+    private Button bStart = new Button();
 
     private Button field0A = new Button();
     private Button field0B = new Button();
@@ -126,13 +124,12 @@ public class Chess extends Frame {
         });
         cp.add(bStart);
 
-
-
         turn.setBounds(16, 10, 80, 24);
-        turn.setFont(new Font("Dialog", Font.PLAIN, 14));
+        turn.setFont(new Font("Dialog", Font.BOLD, 24));
         turn.setText("WHITE");
+        turn.setForeground(Color.WHITE);
+        turn.setBackground(Color.GRAY);
         cp.add(turn);
-
 
         // cinema
 
@@ -143,6 +140,7 @@ public class Chess extends Frame {
                 field0A_Action(e);
             }
         });
+        field0A.setBackground(Color.WHITE);
         cp.add(field0A);
 
         field0B.setBounds(240, 80, 60, 24);
@@ -152,6 +150,7 @@ public class Chess extends Frame {
                 field0B_Action(e);
             }
         });
+        field0B.setBackground(Color.PINK);
         cp.add(field0B);
 
         field0C.setBounds(300, 80, 60, 24);
@@ -161,6 +160,7 @@ public class Chess extends Frame {
                 field0C_Action(e);
             }
         });
+        field0C.setBackground(Color.WHITE);
         cp.add(field0C);
         
         field0D.setBounds(360, 80, 60, 24);
@@ -170,6 +170,7 @@ public class Chess extends Frame {
                 field0D_Action(e);
             }
         });
+        field0D.setBackground(Color.PINK);
         cp.add(field0D);
 
         field0E.setBounds(420, 80, 60, 24);
@@ -179,6 +180,7 @@ public class Chess extends Frame {
                 field0E_Action(e);
             }
         });
+        field0E.setBackground(Color.WHITE);
         cp.add(field0E);
         
         field0F.setBounds(480, 80, 60, 24);
@@ -188,6 +190,7 @@ public class Chess extends Frame {
                 field0F_Action(e);
             }
         });
+        field0F.setBackground(Color.PINK);
         cp.add(field0F);
         
         field0G.setBounds(540, 80, 60, 24);
@@ -197,6 +200,7 @@ public class Chess extends Frame {
                 field0G_Actione(e);
             }
         });
+        field0G.setBackground(Color.WHITE);
         cp.add(field0G);
         
         field0H.setBounds(600, 80, 60, 24);
@@ -206,6 +210,7 @@ public class Chess extends Frame {
                 field0H_Action(e);
             }
         });
+        field0H.setBackground(Color.PINK);
         cp.add(field0H);
         
         field1A.setBounds(180, 104, 60, 24);
@@ -1492,6 +1497,7 @@ public class Chess extends Frame {
             startR = 1;
             startC = 0;
             pickStart = false;
+            field1A.setForeground(Color.RED);
         }
         else {
             endR = 1;
@@ -1697,6 +1703,7 @@ public class Chess extends Frame {
 
         // set text for buttons
 
+        reset();
         initButtons(board);
         startR = -1;
         startC = -1;
@@ -2248,6 +2255,75 @@ public class Chess extends Frame {
             s += "\n";
         }
         return s;
+    }
+
+    public void reset(){
+        field0A.setForeground(Color.BLACK);
+        field0B.setForeground(Color.BLACK);
+        field0C.setForeground(Color.BLACK);
+        field0D.setForeground(Color.BLACK);
+        field0E.setForeground(Color.BLACK);
+        field0F.setForeground(Color.BLACK);
+        field0G.setForeground(Color.BLACK);
+        field0H.setForeground(Color.BLACK);
+        field1A.setForeground(Color.BLACK);
+        field1B.setForeground(Color.BLACK);
+        field1C.setForeground(Color.BLACK);
+        field1D.setForeground(Color.BLACK);
+        field1E.setForeground(Color.BLACK);
+        field1F.setForeground(Color.BLACK);
+        field1G.setForeground(Color.BLACK);
+        field1H.setForeground(Color.BLACK);
+        field2A.setForeground(Color.BLACK);
+        field2B.setForeground(Color.BLACK);
+        field2C.setForeground(Color.BLACK);
+        field2D.setForeground(Color.BLACK);
+        field2E.setForeground(Color.BLACK);
+        field2F.setForeground(Color.BLACK);
+        field2G.setForeground(Color.BLACK);
+        field2H.setForeground(Color.BLACK);
+        field3A.setForeground(Color.BLACK);
+        field3B.setForeground(Color.BLACK);
+        field3C.setForeground(Color.BLACK);
+        field3D.setForeground(Color.BLACK);
+        field3E.setForeground(Color.BLACK);
+        field3F.setForeground(Color.BLACK);
+        field3G.setForeground(Color.BLACK);
+        field3H.setForeground(Color.BLACK);
+        field4A.setForeground(Color.BLACK);
+        field4B.setForeground(Color.BLACK);
+        field4C.setForeground(Color.BLACK);
+        field4D.setForeground(Color.BLACK);
+        field4E.setForeground(Color.BLACK);
+        field4F.setForeground(Color.BLACK);
+        field4G.setForeground(Color.BLACK);
+        field4H.setForeground(Color.BLACK);
+        field5A.setForeground(Color.BLACK);
+        field5B.setForeground(Color.BLACK);
+        field5C.setForeground(Color.BLACK);
+        field5D.setForeground(Color.BLACK);
+        field5E.setForeground(Color.BLACK);
+        field5F.setForeground(Color.BLACK);
+        field5G.setForeground(Color.BLACK);
+        field5F.setForeground(Color.BLACK);
+        field6A.setForeground(Color.BLACK);
+        field6B.setForeground(Color.BLACK);
+        field6C.setForeground(Color.BLACK);
+        field6D.setForeground(Color.BLACK);
+        field6E.setForeground(Color.BLACK);
+        field6F.setForeground(Color.BLACK);
+        field6G.setForeground(Color.BLACK);
+        field6H.setForeground(Color.BLACK);
+        field7A.setForeground(Color.BLACK);
+        field7B.setForeground(Color.BLACK);
+        field7C.setForeground(Color.BLACK);
+        field7D.setForeground(Color.BLACK);
+        field7E.setForeground(Color.BLACK);
+        field7F.setForeground(Color.BLACK);
+        field7G.setForeground(Color.BLACK);
+        field7H.setForeground(Color.BLACK);
+
+
     }
 
 
