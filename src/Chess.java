@@ -220,6 +220,7 @@ public class Chess extends Frame {
                 field1A_Action(e);
             }
         });
+        field1A.setBackground(Color.PINK);
         cp.add(field1A);
         
         field1B.setBounds(240, 104, 60, 24);
@@ -229,6 +230,7 @@ public class Chess extends Frame {
                 field1B_Action(e);
             }
         });
+        field1B.setBackground(Color.WHITE);
         cp.add(field1B);
         
         field1C.setBounds(300, 104, 60, 24);
@@ -238,6 +240,7 @@ public class Chess extends Frame {
                 f1c_Action(e);
             }
         });
+        field1C.setBackground(Color.PINK);
         cp.add(field1C);
         
         field1D.setBounds(360, 104, 60, 24);
@@ -247,6 +250,7 @@ public class Chess extends Frame {
                 field1D_Action(e);
             }
         });
+        field1D.setBackground(Color.WHITE);
         cp.add(field1D);
         
         field1E.setBounds(420, 104, 60, 24);
@@ -256,6 +260,7 @@ public class Chess extends Frame {
                 field1E_Action(e);
             }
         });
+        field1E.setBackground(Color.PINK);
         cp.add(field1E);
         
         field1F.setBounds(480, 104, 60, 24);
@@ -265,6 +270,7 @@ public class Chess extends Frame {
                 field1F_Action(e);
             }
         });
+        field1F.setBackground(Color.WHITE);
         cp.add(field1F);
         
         field1G.setBounds(540, 104, 60, 24);
@@ -274,6 +280,7 @@ public class Chess extends Frame {
                 field1G_Action(e);
             }
         });
+        field1G.setBackground(Color.PINK);
         cp.add(field1G);
         
         field1H.setBounds(600, 104, 60, 24);
@@ -283,6 +290,7 @@ public class Chess extends Frame {
                 field1H_Action(e);
             }
         });
+        field1H.setBackground(Color.WHITE);
         cp.add(field1H);
         
         field2A.setBounds(180, 128, 60, 24);
@@ -292,6 +300,7 @@ public class Chess extends Frame {
                 field2A_Actione(e);
             }
         });
+        field2A.setBackground(Color.WHITE);
         cp.add(field2A);
 
         field2B.setBounds(240, 128, 60, 24);
@@ -301,6 +310,7 @@ public class Chess extends Frame {
                 field2B_Actione(e);
             }
         });
+        field2B.setBackground(Color.PINK);
         cp.add(field2B);
 
         field2C.setBounds(300, 128, 60, 24);
@@ -310,6 +320,7 @@ public class Chess extends Frame {
                 field2C_Actione(e);
             }
         });
+        field2C.setBackground(Color.WHITE);
         cp.add(field2C);
 
         field2D.setBounds(360, 128, 60, 24);
@@ -319,6 +330,7 @@ public class Chess extends Frame {
                 field2D_Action(e);
             }
         });
+        field2D.setBackground(Color.PINK);
         cp.add(field2D);
 
         field2E.setBounds(420, 128, 60, 24);
@@ -328,6 +340,7 @@ public class Chess extends Frame {
                 field2E_Action(e);
             }
         });
+        field2E.setBackground(Color.WHITE);
         cp.add(field2E);
         
         field2F.setBounds(480, 128, 60, 24);
@@ -337,6 +350,7 @@ public class Chess extends Frame {
                 field2F_Actione(e);
             }
         });
+        field2F.setBackground(Color.PINK);
         cp.add(field2F);
         
         field2G.setBounds(540, 128, 60, 24);
@@ -346,6 +360,7 @@ public class Chess extends Frame {
                 field2G_Action(e);
             }
         });
+        field2G.setBackground(Color.WHITE);
         cp.add(field2G);
         
         field2H.setBounds(600, 128, 60, 24);
@@ -355,6 +370,7 @@ public class Chess extends Frame {
                 field2H_Action(e);
             }
         });
+        field2H.setBackground(Color.PINK);
         cp.add(field2H);
 
         field3A.setBounds(180, 152, 60, 24);
@@ -364,6 +380,7 @@ public class Chess extends Frame {
                 field3A_Action(e);
             }
         });
+        field3A.setBackground(Color.PINK);
         cp.add(field3A);
 
         field3B.setBounds(240, 152, 60, 24);
@@ -373,6 +390,7 @@ public class Chess extends Frame {
                 field3B_Action(e);
             }
         });
+        field3B.setBackground(Color.WHITE);
         cp.add(field3B);
         
         field3C.setBounds(300, 152, 60, 24);
@@ -382,6 +400,7 @@ public class Chess extends Frame {
                 field3C_Action(e);
             }
         });
+        field3C.setBackground(Color.PINK);
         cp.add(field3C);
         
         field3D.setBounds(360, 152, 60, 24);
@@ -391,6 +410,7 @@ public class Chess extends Frame {
                 field3D_Action(e);
             }
         });
+        field3D.setBackground(Color.WHITE);
         cp.add(field3D);
         
         field3E.setBounds(420, 152, 60, 24);
@@ -400,6 +420,7 @@ public class Chess extends Frame {
                 field3E_Action(e);
             }
         });
+        field3E.setBackground(Color.PINK);
         cp.add(field3E);
         
         field3F.setBounds(480, 152, 60, 24);
@@ -409,6 +430,7 @@ public class Chess extends Frame {
                 field3F_Action(e);
             }
         });
+        field3F.setBackground(Color.WHITE);
         cp.add(field3F);
         
         field3G.setBounds(540, 152, 60, 24);
@@ -418,6 +440,7 @@ public class Chess extends Frame {
                 field3G_Action(e);
             }
         });
+        field3G.setBackground(Color.PINK);
         cp.add(field3G);
         
         field3H.setBounds(600, 152, 60, 24);
@@ -427,6 +450,7 @@ public class Chess extends Frame {
                 field3H_Action(e);
             }
         });
+        field3H.setBackground(Color.WHITE);
         cp.add(field3H);
 
         field4A.setBounds(180, 176, 60, 24);
@@ -436,6 +460,7 @@ public class Chess extends Frame {
                 field4A_Action(e);
             }
         });
+        field4A.setBackground(Color.WHITE);
         cp.add(field4A);
 
         field4B.setBounds(240, 176, 60, 24);
@@ -445,6 +470,7 @@ public class Chess extends Frame {
                 field4B_Action(e);
             }
         });
+        field4B.setBackground(Color.PINK);
         cp.add(field4B);
 
         field4C.setBounds(300, 176, 60, 24);
@@ -454,6 +480,7 @@ public class Chess extends Frame {
                 field4C_Action(e);
             }
         });
+        field4C.setBackground(Color.WHITE);
         cp.add(field4C);
 
         field4D.setBounds(360, 176, 60, 24);
@@ -463,6 +490,7 @@ public class Chess extends Frame {
                 field4D_Action(e);
             }
         });
+        field4D.setBackground(Color.PINK);
         cp.add(field4D);
 
         field4E.setBounds(420, 176, 60, 24);
@@ -472,6 +500,7 @@ public class Chess extends Frame {
                 field4E_Action(e);
             }
         });
+        field4E.setBackground(Color.WHITE);
         cp.add(field4E);
 
         field4F.setBounds(480, 176, 60, 24);
@@ -481,6 +510,7 @@ public class Chess extends Frame {
                 field4F_Action(e);
             }
         });
+        field4F.setBackground(Color.PINK);
         cp.add(field4F);
 
         field4G.setBounds(540, 176, 60, 24);
@@ -490,6 +520,7 @@ public class Chess extends Frame {
                 field4G_Action(e);
             }
         });
+        field4G.setBackground(Color.WHITE);
         cp.add(field4G);
 
         field4H.setBounds(600, 176, 60, 24);
@@ -499,6 +530,7 @@ public class Chess extends Frame {
                 field4H_Action(e);
             }
         });
+        field4H.setBackground(Color.PINK);
         cp.add(field4H);
 
         field5A.setBounds(180, 200, 60, 24);
@@ -508,6 +540,7 @@ public class Chess extends Frame {
                 field5A_Action(e);
             }
         });
+        field5A.setBackground(Color.PINK);
         cp.add(field5A);
 
         field5B.setBounds(240, 200, 60, 24);
@@ -517,6 +550,7 @@ public class Chess extends Frame {
                 field5B_Action(e);
             }
         });
+        field5B.setBackground(Color.WHITE);
         cp.add(field5B);
 
         field5C.setBounds(300, 200, 60, 24);
@@ -526,6 +560,7 @@ public class Chess extends Frame {
                 field5C_Action(e);
             }
         });
+        field5C.setBackground(Color.PINK);
         cp.add(field5C);
 
         field5D.setBounds(360, 200, 60, 24);
@@ -535,6 +570,7 @@ public class Chess extends Frame {
                 field5D_Action(e);
             }
         });
+        field5D.setBackground(Color.WHITE);
         cp.add(field5D);
 
         field5E.setBounds(420, 200, 60, 24);
@@ -544,6 +580,7 @@ public class Chess extends Frame {
                 field5E_Action(e);
             }
         });
+        field5E.setBackground(Color.PINK);
         cp.add(field5E);
 
         field5F.setBounds(480, 200, 60, 24);
@@ -553,6 +590,7 @@ public class Chess extends Frame {
                 field5F_Action(e);
             }
         });
+        field5F.setBackground(Color.WHITE);
         cp.add(field5F);
 
         field5G.setBounds(540, 200, 60, 24);
@@ -562,6 +600,7 @@ public class Chess extends Frame {
                 field5G_Action(e);
             }
         });
+        field5G.setBackground(Color.PINK);
         cp.add(field5G);
 
         field5H.setBounds(600, 200, 60, 24);
@@ -571,6 +610,7 @@ public class Chess extends Frame {
                 field5H_Action(e);
             }
         });
+        field5H.setBackground(Color.WHITE);
         cp.add(field5H);
 
         field6A.setBounds(180, 224, 60, 24);
@@ -580,6 +620,7 @@ public class Chess extends Frame {
                 field6A_Action(e);
             }
         });
+        field6A.setBackground(Color.WHITE);
         cp.add(field6A);
 
         field6B.setBounds(240, 224, 60, 24);
@@ -589,6 +630,7 @@ public class Chess extends Frame {
                 field6B_Action(e);
             }
         });
+        field6B.setBackground(Color.PINK);
         cp.add(field6B);
 
         field6C.setBounds(300, 224, 60, 24);
@@ -598,6 +640,7 @@ public class Chess extends Frame {
                 field6C_Action(e);
             }
         });
+        field6C.setBackground(Color.WHITE);
         cp.add(field6C);
 
         field6D.setBounds(360, 224, 60, 24);
@@ -607,6 +650,7 @@ public class Chess extends Frame {
                 field6D_Action(e);
             }
         });
+        field6D.setBackground(Color.PINK);
         cp.add(field6D);
 
         field6E.setBounds(420, 224, 60, 24);
@@ -616,6 +660,7 @@ public class Chess extends Frame {
                 field6E_Action(e);
             }
         });
+        field6E.setBackground(Color.WHITE);
         cp.add(field6E);
 
         field6F.setBounds(480, 224, 60, 24);
@@ -625,6 +670,7 @@ public class Chess extends Frame {
                 field6F_Action(e);
             }
         });
+        field6F.setBackground(Color.PINK);
         cp.add(field6F);
 
         field6G.setBounds(540, 224, 60, 24);
@@ -634,6 +680,7 @@ public class Chess extends Frame {
                 field6G_Action(e);
             }
         });
+        field6G.setBackground(Color.WHITE);
         cp.add(field6G);
 
         field6H.setBounds(600, 224, 60, 24);
@@ -643,6 +690,7 @@ public class Chess extends Frame {
                 field6H_Action(e);
             }
         });
+        field6H.setBackground(Color.PINK);
         cp.add(field6H);
 
         field7A.setBounds(180, 248, 60, 24);
@@ -652,6 +700,7 @@ public class Chess extends Frame {
                 field7A_Action(e);
             }
         });
+        field7A.setBackground(Color.PINK);
         cp.add(field7A);
 
         field7B.setBounds(240, 248, 60, 24);
@@ -661,6 +710,7 @@ public class Chess extends Frame {
                 field7B_Action(e);
             }
         });
+        field7B.setBackground(Color.WHITE);
         cp.add(field7B);
 
         field7C.setBounds(300, 248, 60, 24);
@@ -670,6 +720,7 @@ public class Chess extends Frame {
                 field7C_Action(e);
             }
         });
+        field7C.setBackground(Color.PINK);
         cp.add(field7C);
         
         field7D.setBounds(360, 248, 60, 24);
@@ -679,6 +730,7 @@ public class Chess extends Frame {
                 field7D_Action(e);
             }
         });
+        field7D.setBackground(Color.WHITE);
         cp.add(field7D);
 
         field7E.setBounds(420, 248, 60, 24);
@@ -688,6 +740,7 @@ public class Chess extends Frame {
                 field7E_Action(e);
             }
         });
+        field7E.setBackground(Color.PINK);
         cp.add(field7E);
 
         field7F.setBounds(480, 248, 60, 24);
@@ -697,6 +750,7 @@ public class Chess extends Frame {
                 field7F_Action(e);
             }
         });
+        field7F.setBackground(Color.WHITE);
         cp.add(field7F);
 
         field7G.setBounds(540, 248, 60, 24);
@@ -706,6 +760,7 @@ public class Chess extends Frame {
                 field7G_Action(e);
             }
         });
+        field7G.setBackground(Color.PINK);
         cp.add(field7G);
 
         field7H.setBounds(600, 248, 60, 24);
@@ -715,6 +770,7 @@ public class Chess extends Frame {
                 field7H_Action(e);
             }
         });
+        field7H.setBackground(Color.WHITE);
         cp.add(field7H);
         
         // end components
