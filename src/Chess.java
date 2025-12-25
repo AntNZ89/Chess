@@ -776,7 +776,7 @@ public class Chess extends Frame {
         // end components
 
         setVisible(true);
-    } // end of public Chess
+    }
 
     private void field7H_Action(ActionEvent e) {
         if (pickStart){
@@ -1811,7 +1811,6 @@ public class Chess extends Frame {
         startC = -1;
         pickStart = true;
 
-
         System.out.println(printBoard(board));
     } // end of bmove_ActionPerformed
 
@@ -2281,36 +2280,36 @@ public class Chess extends Frame {
     }
 
     private static void initBishops(Figure[][] board){
-        Bishop bishopW1 = new Bishop("white", 0, 1);
-        Bishop bishopW2 = new Bishop("white", 0, 6);
+        Bishop bishopW1 = new Bishop("white", 7, 1);
+        Bishop bishopW2 = new Bishop("white", 7, 6);
         board[bishopW1.getRow()][bishopW1.getCol()] = bishopW1;
         board[bishopW2.getRow()][bishopW2.getCol()] = bishopW2;
-        Bishop bishopB1 = new Bishop("black", 7, 1);
-        Bishop bishopB2 = new Bishop("black", 7, 6);
+        Bishop bishopB1 = new Bishop("black", 0, 1);
+        Bishop bishopB2 = new Bishop("black", 0, 6);
         board[bishopB1.getRow()][bishopB1.getCol()] = bishopB1;
         board[bishopB2.getRow()][bishopB2.getCol()] = bishopB2;
     }
 
     private static void initRooks(Figure[][] board){
-        Rook rookW1 = new Rook("white", 0, 0);
-        Rook rookW2 = new Rook("white", 0, 7);
+        Rook rookW1 = new Rook("white", 7, 0);
+        Rook rookW2 = new Rook("white", 7, 7);
         board[rookW1.getRow()][rookW1.getCol()] = rookW1;
         board[rookW2.getRow()][rookW2.getCol()] = rookW2;
-        Rook rookB1 = new Rook("black", 7, 0);
-        Rook rookB2 = new Rook("black", 7, 7);
+        Rook rookB1 = new Rook("black", 0, 0);
+        Rook rookB2 = new Rook("black", 0, 7);
         board[rookB1.getRow()][rookB1.getCol()] = rookB1;
         board[rookB2.getRow()][rookB2.getCol()] = rookB2;
     }
 
     private static void initPawns(Figure[][] board){
-        Pawn pawnW1 = new Pawn("white", 1, 0);
-        Pawn pawnW2 = new Pawn("white", 1, 1);
-        Pawn pawnW3 = new Pawn("white", 1, 2);
-        Pawn pawnW4 = new Pawn("white", 1, 3);
-        Pawn pawnW5 = new Pawn("white", 1, 4);
-        Pawn pawnW6 = new Pawn("white", 1, 5);
-        Pawn pawnW7 = new Pawn("white", 1, 6);
-        Pawn pawnW8 = new Pawn("white", 1, 7);
+        Pawn pawnW1 = new Pawn("white", 6, 0);
+        Pawn pawnW2 = new Pawn("white", 6, 1);
+        Pawn pawnW3 = new Pawn("white", 6, 2);
+        Pawn pawnW4 = new Pawn("white", 6, 3);
+        Pawn pawnW5 = new Pawn("white", 6, 4);
+        Pawn pawnW6 = new Pawn("white", 6, 5);
+        Pawn pawnW7 = new Pawn("white", 6, 6);
+        Pawn pawnW8 = new Pawn("white", 6, 7);
         board[pawnW1.getRow()][pawnW1.getCol()] = pawnW1;
         board[pawnW2.getRow()][pawnW2.getCol()] = pawnW2;
         board[pawnW3.getRow()][pawnW3.getCol()] = pawnW3;
@@ -2319,14 +2318,14 @@ public class Chess extends Frame {
         board[pawnW6.getRow()][pawnW6.getCol()] = pawnW6;
         board[pawnW7.getRow()][pawnW7.getCol()] = pawnW7;
         board[pawnW8.getRow()][pawnW8.getCol()] = pawnW8;
-        Pawn pawnB1 = new Pawn("black", 6, 0);
-        Pawn pawnB2 = new Pawn("black", 6, 1);
-        Pawn pawnB3 = new Pawn("black", 6, 2);
-        Pawn pawnB4 = new Pawn("black", 6, 3);
-        Pawn pawnB5 = new Pawn("black", 6, 4);
-        Pawn pawnB6 = new Pawn("black", 6, 5);
-        Pawn pawnB7 = new Pawn("black", 6, 6);
-        Pawn pawnB8 = new Pawn("black", 6, 7);
+        Pawn pawnB1 = new Pawn("black", 1, 0);
+        Pawn pawnB2 = new Pawn("black", 1, 1);
+        Pawn pawnB3 = new Pawn("black", 1, 2);
+        Pawn pawnB4 = new Pawn("black", 1, 3);
+        Pawn pawnB5 = new Pawn("black", 1, 4);
+        Pawn pawnB6 = new Pawn("black", 1, 5);
+        Pawn pawnB7 = new Pawn("black", 1, 6);
+        Pawn pawnB8 = new Pawn("black", 1, 7);
         board[pawnB1.getRow()][pawnB1.getCol()] = pawnB1;
         board[pawnB2.getRow()][pawnB2.getCol()] = pawnB2;
         board[pawnB3.getRow()][pawnB3.getCol()] = pawnB3;

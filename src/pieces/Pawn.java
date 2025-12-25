@@ -23,7 +23,7 @@ public class Pawn extends Figure {
         this.canGo2 = false;
     }
 
-    public boolean isPossibleB(int eRow, int eCol, Figure[][] board){
+    public boolean isPossibleW(int eRow, int eCol, Figure[][] board){
         int sRow = this.row;
         int sCol = this.col;
 
@@ -67,11 +67,11 @@ public class Pawn extends Figure {
                 System.out.println("Can't go there 5");
                 return false;
             }
-            else if (board[eRow][eCol].getColour().equals("black")){
+            else if (board[eRow][eCol].getColour().equals("white")){
                 System.out.println("Can't go there 6");
                 return false;
             }
-            else if (board[eRow][eCol].getColour().equals("white")){
+            else if (board[eRow][eCol].getColour().equals("black")){
                 System.out.println("Can go there 2");
                 return true;
             }
@@ -83,7 +83,7 @@ public class Pawn extends Figure {
     }
 
 
-    public boolean isPossibleW(int eRow, int eCol, Figure[][] board){
+    public boolean isPossibleB(int eRow, int eCol, Figure[][] board){
         int sRow = this.row;
         int sCol = this.col;
 
@@ -129,11 +129,11 @@ public class Pawn extends Figure {
                 System.out.println("Can't go there 5");
                 return false;
             }
-            else if (board[eRow][eCol].getColour().equals("white")){
+            else if (board[eRow][eCol].getColour().equals("black")){
                 System.out.println("Can't go there 6");
                 return false;
             }
-            else if (board[eRow][eCol].getColour().equals("black")){
+            else if (board[eRow][eCol].getColour().equals("white")){
                 System.out.println("Can go there 2");
                 return true;
             }
