@@ -80,15 +80,9 @@ public class Bishop extends Figure{
             }
         }
 
-
-
         System.out.println("went through");
         return true;
 
     }
-
-
-
-
 
 }

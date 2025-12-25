@@ -197,7 +197,7 @@ public class Chess extends Frame {
         field0G.setFont(new Font("Dialog", Font.PLAIN, 11));
         field0G.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                field0G_Actione(e);
+                field0G_Action(e);
             }
         });
         field0G.setBackground(Color.WHITE);
@@ -237,7 +237,7 @@ public class Chess extends Frame {
         field1C.setFont(new Font("Dialog", Font.PLAIN, 11));
         field1C.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                f1c_Action(e);
+                field1C_Action(e);
             }
         });
         field1C.setBackground(Color.PINK);
@@ -297,7 +297,7 @@ public class Chess extends Frame {
         field2A.setFont(new Font("Dialog", Font.PLAIN, 11));
         field2A.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                field2A_Actione(e);
+                field2A_Action(e);
             }
         });
         field2A.setBackground(Color.WHITE);
@@ -307,7 +307,7 @@ public class Chess extends Frame {
         field2B.setFont(new Font("Dialog", Font.PLAIN, 11));
         field2B.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                field2B_Actione(e);
+                field2B_Action(e);
             }
         });
         field2B.setBackground(Color.PINK);
@@ -317,7 +317,7 @@ public class Chess extends Frame {
         field2C.setFont(new Font("Dialog", Font.PLAIN, 11));
         field2C.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                field2C_Actione(e);
+                field2C_Action(e);
             }
         });
         field2C.setBackground(Color.WHITE);
@@ -347,7 +347,7 @@ public class Chess extends Frame {
         field2F.setFont(new Font("Dialog", Font.PLAIN, 11));
         field2F.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                field2F_Actione(e);
+                field2F_Action(e);
             }
         });
         field2F.setBackground(Color.PINK);
@@ -1408,7 +1408,7 @@ public class Chess extends Frame {
         }
     }
 
-    private void field2F_Actione(ActionEvent e) {
+    private void field2F_Action(ActionEvent e) {
         if (pickStart){
             startR = 2;
             startC = 5;
@@ -1453,7 +1453,7 @@ public class Chess extends Frame {
         }
     }
 
-    private void field2C_Actione(ActionEvent e) {
+    private void field2C_Action(ActionEvent e) {
         if (pickStart){
             startR = 2;
             startC = 2;
@@ -1468,7 +1468,7 @@ public class Chess extends Frame {
         }
     }
 
-    private void field2B_Actione(ActionEvent e) {
+    private void field2B_Action(ActionEvent e) {
         if (pickStart){
             startR = 2;
             startC = 1;
@@ -1483,7 +1483,7 @@ public class Chess extends Frame {
         }
     }
 
-    private void field2A_Actione(ActionEvent e) {
+    private void field2A_Action(ActionEvent e) {
         if (pickStart){
             startR = 2;
             startC = 0;
@@ -1573,7 +1573,7 @@ public class Chess extends Frame {
         }
     }
 
-    private void f1c_Action(ActionEvent e) {
+    private void field1C_Action(ActionEvent e) {
         if (pickStart){
             startR = 1;
             startC = 2;
@@ -1634,7 +1634,7 @@ public class Chess extends Frame {
         }
     }
 
-    private void field0G_Actione(ActionEvent e) {
+    private void field0G_Action(ActionEvent e) {
         if (pickStart){
             startR = 0;
             startC = 6;
@@ -1755,24 +1755,6 @@ public class Chess extends Frame {
             System.out.println("Finish on deciding your move.");
             return;
         }
-
-//        if (startR.getText().length() != 1 || startC.getText().length() != 1
-//            || endR.getText().length() != 1 || endC.getText().length() != 1){ // check for invalid input
-//            System.out.println("Invalid input, only one digit per field");
-//            return;
-//        }
-//
-//        if (!Character.isDigit(startR.getText().charAt(0)) || !Character.isDigit(startC.getText().charAt(0))
-//            || !Character.isDigit(endR.getText().charAt(0)) || !Character.isDigit(endC.getText().charAt(0))){ // check for invalid input
-//            System.out.println("Invalid input, use digits");
-//            return;
-//        }
-
-//        int sRow = startR.getText().charAt(0)-'1'+1;
-//        int sCol = startC.getText().charAt(0)-'1'+1;
-//        int eRow = endR.getText().charAt(0)-'1'+1;
-//        int eCol = endC.getText().charAt(0)-'1'+1;
-
 
         if (board[startR][startC] == null){ // check if there is a piece at start-coordinates
             System.out.println("There's no piece there.");
@@ -2297,7 +2279,6 @@ public class Chess extends Frame {
         initBishops(board);
         return board;
     }
-
 
     private static void initBishops(Figure[][] board){
         Bishop bishopW1 = new Bishop("white", 0, 1);
