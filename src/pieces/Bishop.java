@@ -40,7 +40,7 @@ public class Bishop extends Figure{
         // check if the piece can move to the desired position REGARDING other pieces
         if (movement.equals("BOTTOM_RIGHT")){
             int i = 1;
-            while (sRow+i < 8 && sCol+i < 8){
+            while (sRow+i < eRow && sCol+i < eCol){
                 if (board[sRow+i][sCol+i] != null){
                     System.out.println("bottom right");
                     return false;
@@ -50,7 +50,7 @@ public class Bishop extends Figure{
         }
         else if (movement.equals("BOTTOM_LEFT")){
             int i = 1;
-            while (sRow+i < 8 && sCol-i >= 0){
+            while (sRow+i < eRow && sCol-i > eCol){
                 System.out.println(i);
                 if (board[sRow+i][sCol-i] != null){
                     System.out.println("bottom left");
@@ -61,7 +61,7 @@ public class Bishop extends Figure{
         }
         else if (movement.equals("UP_RIGHT")){
             int i = 1;
-            while (sRow-i >= 0 && sCol+i < 8){
+            while (sRow-i > eRow && sCol+i < eCol){
                 if (board[sRow-i][sCol+i] != null){
                     System.out.println("up right");
                     return false;
@@ -71,7 +71,7 @@ public class Bishop extends Figure{
         }
         else if (movement.equals("UP_LEFT")){
             int i = 1;
-            while (sRow-i >= 0 && sCol-i >= 0){
+            while (sRow-i > eRow && sCol-i > eCol){
                 if (board[sRow-i][sCol-i] != null){
                     System.out.println("up left");
                     return false;

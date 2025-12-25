@@ -18,7 +18,6 @@ public class Chess extends Frame {
     // start attributes
     Boolean pickStart = true;
     Boolean canMove = false;
-    private Button bmove = new Button();
     private Button bStart = new Button();
 
     private Label turn = new Label();
@@ -115,15 +114,7 @@ public class Chess extends Frame {
         Panel cp = new Panel(null);
         add(cp);
         // start components
-        bmove.setBounds(16, 50, 80, 24);
-        bmove.setFont(new Font("Dialog", Font.PLAIN, 11));
-        bmove.setLabel("move");
-        bmove.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                bmove_ActionPerformed(evt);
-            }
-        });
-        cp.add(bmove);
+
 
         bStart.setBounds(16, 80, 80, 24);
         bStart.setFont(new Font("Dialog", Font.PLAIN, 11));
@@ -149,7 +140,7 @@ public class Chess extends Frame {
         field0A.setFont(new Font("Dialog", Font.PLAIN, 11));
         field0A.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                field0A_Action(e, 0, 0);
+                field0A_Action(e);
             }
         });
         cp.add(field0A);
@@ -221,7 +212,7 @@ public class Chess extends Frame {
         field1A.setFont(new Font("Dialog", Font.PLAIN, 11));
         field1A.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                field1A_Action(e, 1, 0);
+                field1A_Action(e);
             }
         });
         cp.add(field1A);
@@ -293,7 +284,7 @@ public class Chess extends Frame {
         field2A.setFont(new Font("Dialog", Font.PLAIN, 11));
         field2A.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                field2A_Actione(e, 2, 0);
+                field2A_Actione(e);
             }
         });
         cp.add(field2A);
@@ -365,7 +356,7 @@ public class Chess extends Frame {
         field3A.setFont(new Font("Dialog", Font.PLAIN, 11));
         field3A.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                field3A_Action(e, 3, 0);
+                field3A_Action(e);
             }
         });
         cp.add(field3A);
@@ -727,234 +718,898 @@ public class Chess extends Frame {
     } // end of public Chess
 
     private void field7H_Action(ActionEvent e) {
-    }
-
-    private void field7G_Action(ActionEvent e) {
-    }
-
-    private void field7F_Action(ActionEvent e) {
-    }
-
-    private void field7E_Action(ActionEvent e) {
-    }
-
-    private void field7D_Action(ActionEvent e) {
-    }
-
-    private void field7C_Action(ActionEvent e) {
-    }
-
-    private void field7B_Action(ActionEvent e) {
-    }
-
-    private void field7A_Action(ActionEvent e) {
-    }
-
-    private void field6H_Action(ActionEvent e) {
-    }
-
-    private void field6G_Action(ActionEvent e) {
-    }
-
-    private void field6F_Action(ActionEvent e) {
-    }
-
-    private void field6E_Action(ActionEvent e) {
-    }
-
-    private void field6D_Action(ActionEvent e) {
-    }
-
-    private void field6C_Action(ActionEvent e) {
-    }
-
-    private void field6B_Action(ActionEvent e) {
-    }
-
-    private void field6A_Action(ActionEvent e) {
-    }
-
-    private void field5H_Action(ActionEvent e) {
-    }
-
-    private void field5G_Action(ActionEvent e) {
-    }
-
-    private void field5F_Action(ActionEvent e) {
-    }
-
-    private void field5E_Action(ActionEvent e) {
-    }
-
-    private void field5D_Action(ActionEvent e) {
-    }
-
-    private void field5C_Action(ActionEvent e) {
-    }
-
-    private void field5B_Action(ActionEvent e) {
-    }
-
-    private void field5A_Action(ActionEvent e) {
-    }
-
-    private void field4H_Action(ActionEvent e) {
-    }
-
-    private void field4G_Action(ActionEvent e) {
-    }
-
-    private void field4F_Action(ActionEvent e) {
-    }
-
-    private void field4E_Action(ActionEvent e) {
-    }
-
-    private void field4D_Action(ActionEvent e) {
-    }
-
-    private void field4C_Action(ActionEvent e) {
-    }
-
-    private void field4B_Action(ActionEvent e) {
-    }
-
-    private void field4A_Action(ActionEvent e) {
-    }
-
-    private void field3H_Action(ActionEvent e) {
-    }
-
-    private void field3G_Action(ActionEvent e) {
-    }
-
-    private void field3F_Action(ActionEvent e) {
-    }
-
-    private void field3E_Action(ActionEvent e) {
-    }
-
-    private void field3D_Action(ActionEvent e) {
-    }
-
-    private void field3C_Action(ActionEvent e) {
-    }
-
-    private void field3B_Action(ActionEvent e) {
-    }
-
-    private void field3A_Action(ActionEvent e, int row, int col) {
         if (pickStart){
-            startR = row;
-            startC = col;
+            startR = 7;
+            startC = 7;
             pickStart = false;
         }
         else {
-            endR = row;
-            endC = col;
+            endR = 7;
+            endC = 7;
             canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field7G_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 7;
+            startC = 6;
+            pickStart = false;
+        }
+        else {
+            endR = 7;
+            endC = 6;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field7F_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 7;
+            startC = 5;
+            pickStart = false;
+        }
+        else {
+            endR = 7;
+            endC = 5;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field7E_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 7;
+            startC = 4;
+            pickStart = false;
+        }
+        else {
+            endR = 7;
+            endC = 4;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field7D_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 7;
+            startC = 3;
+            pickStart = false;
+        }
+        else {
+            endR = 7;
+            endC = 3;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field7C_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 7;
+            startC = 2;
+            pickStart = false;
+        }
+        else {
+            endR = 7;
+            endC = 2;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field7B_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 7;
+            startC = 1;
+            pickStart = false;
+        }
+        else {
+            endR = 7;
+            endC = 1;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field7A_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 7;
+            startC = 0;
+            pickStart = false;
+        }
+        else {
+            endR = 7;
+            endC = 0;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field6H_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 6;
+            startC = 7;
+            pickStart = false;
+        }
+        else {
+            endR = 6;
+            endC = 7;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field6G_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 6;
+            startC = 6;
+            pickStart = false;
+        }
+        else {
+            endR = 6;
+            endC = 6;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field6F_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 6;
+            startC = 5;
+            pickStart = false;
+        }
+        else {
+            endR = 6;
+            endC = 5;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field6E_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 6;
+            startC = 4;
+            pickStart = false;
+        }
+        else {
+            endR = 6;
+            endC = 4;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field6D_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 6;
+            startC = 3;
+            pickStart = false;
+        }
+        else {
+            endR = 6;
+            endC = 3;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field6C_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 6;
+            startC = 2;
+            pickStart = false;
+        }
+        else {
+            endR = 6;
+            endC = 2;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field6B_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 6;
+            startC = 1;
+            pickStart = false;
+        }
+        else {
+            endR = 6;
+            endC = 1;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field6A_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 6;
+            startC = 0;
+            pickStart = false;
+        }
+        else {
+            endR = 6;
+            endC = 0;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field5H_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 5;
+            startC = 7;
+            pickStart = false;
+        }
+        else {
+            endR = 5;
+            endC = 7;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field5G_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 5;
+            startC = 6;
+            pickStart = false;
+        }
+        else {
+            endR = 5;
+            endC = 6;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field5F_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 5;
+            startC = 5;
+            pickStart = false;
+        }
+        else {
+            endR = 5;
+            endC = 5;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field5E_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 5;
+            startC = 4;
+            pickStart = false;
+        }
+        else {
+            endR = 5;
+            endC = 4;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field5D_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 5;
+            startC = 3;
+            pickStart = false;
+        }
+        else {
+            endR = 5;
+            endC = 3;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field5C_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 5;
+            startC = 2;
+            pickStart = false;
+        }
+        else {
+            endR = 5;
+            endC = 2;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field5B_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 5;
+            startC = 1;
+            pickStart = false;
+        }
+        else {
+            endR = 5;
+            endC = 1;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field5A_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 5;
+            startC = 0;
+            pickStart = false;
+        }
+        else {
+            endR = 5;
+            endC = 0;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field4H_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 4;
+            startC = 7;
+            pickStart = false;
+        }
+        else {
+            endR = 4;
+            endC = 7;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field4G_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 4;
+            startC = 6;
+            pickStart = false;
+        }
+        else {
+            endR = 4;
+            endC = 6;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field4F_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 4;
+            startC = 5;
+            pickStart = false;
+        }
+        else {
+            endR = 4;
+            endC = 5;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field4E_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 4;
+            startC = 4;
+            pickStart = false;
+        }
+        else {
+            endR = 4;
+            endC = 4;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field4D_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 4;
+            startC = 3;
+            pickStart = false;
+        }
+        else {
+            endR = 4;
+            endC = 3;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field4C_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 4;
+            startC = 2;
+            pickStart = false;
+        }
+        else {
+            endR = 4;
+            endC = 2;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field4B_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 4;
+            startC = 1;
+            pickStart = false;
+        }
+        else {
+            endR = 4;
+            endC = 1;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field4A_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 4;
+            startC = 0;
+            pickStart = false;
+        }
+        else {
+            endR = 4;
+            endC = 0;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field3H_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 3;
+            startC = 7;
+            pickStart = false;
+        }
+        else {
+            endR = 3;
+            endC = 7;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field3G_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 3;
+            startC = 6;
+            pickStart = false;
+        }
+        else {
+            endR = 3;
+            endC = 6;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field3F_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 3;
+            startC = 5;
+            pickStart = false;
+        }
+        else {
+            endR = 3;
+            endC = 5;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field3E_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 3;
+            startC = 4;
+            pickStart = false;
+        }
+        else {
+            endR = 3;
+            endC = 4;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field3D_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 3;
+            startC = 3;
+            pickStart = false;
+        }
+        else {
+            endR = 3;
+            endC = 3;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field3C_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 3;
+            startC = 2;
+            pickStart = false;
+        }
+        else {
+            endR = 3;
+            endC = 2;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field3B_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 3;
+            startC = 1;
+            pickStart = false;
+        }
+        else {
+            endR = 3;
+            endC = 1;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field3A_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 3;
+            startC = 0;
+            pickStart = false;
+        }
+        else {
+            endR = 3;
+            endC = 0;
+            canMove = true;
+            bmove_ActionPerformed();
         }
     }
 
     private void field2H_Action(ActionEvent e) {
-    }
-
-    private void field2G_Action(ActionEvent e) {
-    }
-
-    private void field2F_Actione(ActionEvent e) {
-    }
-
-    private void field2E_Action(ActionEvent e) {
-    }
-
-    private void field2D_Action(ActionEvent e) {
-    }
-
-    private void field2C_Actione(ActionEvent e) {
-    }
-
-    private void field2B_Actione(ActionEvent e) {
-    }
-
-    private void field2A_Actione(ActionEvent e, int row, int col) {
         if (pickStart){
-            startR = row;
-            startC = col;
+            startR = 2;
+            startC = 7;
             pickStart = false;
         }
         else {
-            endR = row;
-            endC = col;
+            endR = 2;
+            endC = 7;
             canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field2G_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 2;
+            startC = 6;
+            pickStart = false;
+        }
+        else {
+            endR = 2;
+            endC = 6;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field2F_Actione(ActionEvent e) {
+        if (pickStart){
+            startR = 2;
+            startC = 5;
+            pickStart = false;
+        }
+        else {
+            endR = 2;
+            endC = 5;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field2E_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 2;
+            startC = 4;
+            pickStart = false;
+        }
+        else {
+            endR = 2;
+            endC = 4;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field2D_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 2;
+            startC = 3;
+            pickStart = false;
+        }
+        else {
+            endR = 2;
+            endC = 3;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field2C_Actione(ActionEvent e) {
+        if (pickStart){
+            startR = 2;
+            startC = 2;
+            pickStart = false;
+        }
+        else {
+            endR = 2;
+            endC = 2;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field2B_Actione(ActionEvent e) {
+        if (pickStart){
+            startR = 2;
+            startC = 1;
+            pickStart = false;
+        }
+        else {
+            endR = 2;
+            endC = 1;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field2A_Actione(ActionEvent e) {
+        if (pickStart){
+            startR = 2;
+            startC = 0;
+            pickStart = false;
+        }
+        else {
+            endR = 2;
+            endC = 0;
+            canMove = true;
+            bmove_ActionPerformed();
         }
     }
 
     private void field1H_Action(ActionEvent e) {
-    }
-
-    private void field1G_Action(ActionEvent e) {
-    }
-
-    private void field1F_Action(ActionEvent e) {
-    }
-
-    private void field1E_Action(ActionEvent e) {
-    }
-
-    private void field1D_Action(ActionEvent e) {
-    }
-
-    private void f1c_Action(ActionEvent e) {
-    }
-
-    private void field1B_Action(ActionEvent e) {
-    }
-
-    private void field1A_Action(ActionEvent e, int row, int col) {
         if (pickStart){
-            startR = row;
-            startC = col;
+            startR = 1;
+            startC = 7;
             pickStart = false;
         }
         else {
-            endR = row;
-            endC = col;
+            endR = 1;
+            endC = 7;
             canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field1G_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 1;
+            startC = 6;
+            pickStart = false;
+        }
+        else {
+            endR = 1;
+            endC = 6;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field1F_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 1;
+            startC = 5;
+            pickStart = false;
+        }
+        else {
+            endR = 1;
+            endC = 5;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field1E_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 1;
+            startC = 4;
+            pickStart = false;
+        }
+        else {
+            endR = 1;
+            endC = 4;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field1D_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 1;
+            startC = 3;
+            pickStart = false;
+        }
+        else {
+            endR = 1;
+            endC = 3;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void f1c_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 1;
+            startC = 2;
+            pickStart = false;
+        }
+        else {
+            endR = 1;
+            endC = 2;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field1B_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 1;
+            startC = 1;
+            pickStart = false;
+        }
+        else {
+            endR = 1;
+            endC = 1;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field1A_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 1;
+            startC = 0;
+            pickStart = false;
+        }
+        else {
+            endR = 1;
+            endC = 0;
+            canMove = true;
+            bmove_ActionPerformed();
         }
     }
 
     private void field0H_Action(ActionEvent e) {
-    }
-
-    private void field0G_Actione(ActionEvent e) {
-    }
-
-    private void field0F_Action(ActionEvent e) {
-    }
-
-    private void field0E_Action(ActionEvent e) {
-    }
-
-    private void field0D_Action(ActionEvent e) {
-    }
-
-    private void field0C_Action(ActionEvent e) {
-    }
-
-    private void field0B_Action(ActionEvent e) {
-    }
-
-    private void field0A_Action(ActionEvent e, int row, int col) {
         if (pickStart){
-            startR = row;
-            startC = col;
+            startR = 0;
+            startC = 7;
             pickStart = false;
         }
         else {
-            endR = row;
-            endC = col;
+            endR = 0;
+            endC = 7;
             canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field0G_Actione(ActionEvent e) {
+        if (pickStart){
+            startR = 0;
+            startC = 6;
+            pickStart = false;
+        }
+        else {
+            endR = 0;
+            endC = 6;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field0F_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 0;
+            startC = 5;
+            pickStart = false;
+        }
+        else {
+            endR = 0;
+            endC = 5;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field0E_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 0;
+            startC = 4;
+            pickStart = false;
+        }
+        else {
+            endR = 0;
+            endC = 4;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field0D_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 0;
+            startC = 3;
+            pickStart = false;
+        }
+        else {
+            endR = 0;
+            endC = 3;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field0C_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 0;
+            startC = 2;
+            pickStart = false;
+        }
+        else {
+            endR = 0;
+            endC = 2;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field0B_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 0;
+            startC = 1;
+            pickStart = false;
+        }
+        else {
+            endR = 0;
+            endC = 1;
+            canMove = true;
+            bmove_ActionPerformed();
+        }
+    }
+
+    private void field0A_Action(ActionEvent e) {
+        if (pickStart){
+            startR = 0;
+            startC = 0;
+            pickStart = false;
+        }
+        else {
+            endR = 0;
+            endC = 0;
+            canMove = true;
+            bmove_ActionPerformed();
         }
     }
 
@@ -964,7 +1619,7 @@ public class Chess extends Frame {
         new Chess();
     } // end of main
 
-    public void bmove_ActionPerformed(ActionEvent evt) {
+    public void bmove_ActionPerformed() {
         if (!isStarted){
             System.out.println("You need to start the game.");
             return;
@@ -1043,16 +1698,15 @@ public class Chess extends Frame {
         // set text for buttons
 
         initButtons(board);
+        startR = -1;
+        startC = -1;
+        pickStart = true;
 
 
         System.out.println(printBoard(board));
     } // end of bmove_ActionPerformed
 
     public void bstart_ActionPerformed(ActionEvent evt){
-        if (isStarted){
-            System.out.println("You already started the game, idiot.");
-            return;
-        }
         isStarted = true;
         System.out.println(printBoard(board));
         bStart.setVisible(false);
@@ -1116,7 +1770,396 @@ public class Chess extends Frame {
             field0H.setLabel(board[0][7].getType());
         }
 
+        if (board[1][0] == null){
+            field1A.setLabel("_____");
+        }
+        else {
+            field1A.setLabel(board[1][0].getType());
+        }
 
+        if (board[1][1] == null){
+            field1B.setLabel("_____");
+        }
+        else {
+            field1B.setLabel(board[1][1].getType());
+        }
+
+        if (board[1][2] == null){
+            field1C.setLabel("_____");
+        }
+        else {
+            field1C.setLabel(board[1][2].getType());
+        }
+
+        if (board[1][3] == null){
+            field1D.setLabel("_____");
+        }
+        else {
+            field1D.setLabel(board[1][3].getType());
+        }
+        if (board[1][4] == null){
+            field1E.setLabel("_____");
+        }
+        else {
+            field1E.setLabel(board[1][4].getType());
+        }
+
+        if (board[1][5] == null){
+            field1F.setLabel("_____");
+        }
+        else {
+            field1F.setLabel(board[1][5].getType());
+        }
+
+        if (board[1][6] == null){
+            field1G.setLabel("_____");
+        }
+        else {
+            field1G.setLabel(board[1][6].getType());
+        }
+
+        if (board[1][7] == null){
+            field1H.setLabel("_____");
+        }
+        else {
+            field1H.setLabel(board[1][7].getType());
+        }
+
+        if (board[2][0] == null){
+            field2A.setLabel("_____");
+        }
+        else {
+            field2A.setLabel(board[2][0].getType());
+        }
+
+        if (board[2][1] == null){
+            field2B.setLabel("_____");
+        }
+        else {
+            field2B.setLabel(board[2][1].getType());
+        }
+
+        if (board[2][2] == null){
+            field2C.setLabel("_____");
+        }
+        else {
+            field2C.setLabel(board[2][2].getType());
+        }
+
+        if (board[2][3] == null){
+            field2D.setLabel("_____");
+        }
+        else {
+            field2D.setLabel(board[2][3].getType());
+        }
+
+        if (board[2][4] == null){
+            field2E.setLabel("_____");
+        }
+        else {
+            field2E.setLabel(board[2][4].getType());
+        }
+
+        if (board[2][5] == null){
+            field2F.setLabel("_____");
+        }
+        else {
+            field2F.setLabel(board[2][5].getType());
+        }
+
+        if (board[2][6] == null){
+            field2G.setLabel("_____");
+        }
+        else {
+            field2G.setLabel(board[2][6].getType());
+        }
+
+        if (board[2][7] == null){
+            field2H.setLabel("_____");
+        }
+        else {
+            field2H.setLabel(board[2][7].getType());
+        }
+
+        if (board[3][0] == null){
+            field3A.setLabel("_____");
+        }
+        else {
+            field3A.setLabel(board[3][0].getType());
+        }
+
+        if (board[3][1] == null){
+            field3B.setLabel("_____");
+        }
+        else {
+            field3B.setLabel(board[3][1].getType());
+        }
+
+        if (board[3][2] == null){
+            field3C.setLabel("_____");
+        }
+        else {
+            field3C.setLabel(board[3][2].getType());
+        }
+
+        if (board[3][3] == null){
+            field3D.setLabel("_____");
+        }
+        else {
+            field3D.setLabel(board[3][3].getType());
+        }
+
+        if (board[3][4] == null){
+            field3E.setLabel("_____");
+        }
+        else {
+            field3E.setLabel(board[3][4].getType());
+        }
+
+        if (board[3][5] == null){
+            field3F.setLabel("_____");
+        }
+        else {
+            field3F.setLabel(board[3][5].getType());
+        }
+
+        if (board[3][6] == null){
+            field3G.setLabel("_____");
+        }
+        else {
+            field3G.setLabel(board[3][6].getType());
+        }
+
+        if (board[3][7] == null){
+            field3H.setLabel("_____");
+        }
+        else {
+            field3H.setLabel(board[3][7].getType());
+        }
+
+        if (board[4][0] == null){
+            field4A.setLabel("_____");
+        }
+        else {
+            field4A.setLabel(board[4][0].getType());
+        }
+
+        if (board[4][1] == null){
+            field4B.setLabel("_____");
+        }
+        else {
+            field4B.setLabel(board[4][1].getType());
+        }
+
+        if (board[4][2] == null){
+            field4C.setLabel("_____");
+        }
+        else {
+            field4C.setLabel(board[4][2].getType());
+        }
+
+        if (board[4][3] == null){
+            field4D.setLabel("_____");
+        }
+        else {
+            field4D.setLabel(board[4][3].getType());
+        }
+
+        if (board[4][4] == null){
+            field4E.setLabel("_____");
+        }
+        else {
+            field4E.setLabel(board[4][4].getType());
+        }
+
+        if (board[4][5] == null){
+            field4F.setLabel("_____");
+        }
+        else {
+            field4F.setLabel(board[4][5].getType());
+        }
+
+        if (board[4][6] == null){
+            field4G.setLabel("_____");
+        }
+        else {
+            field4G.setLabel(board[4][6].getType());
+        }
+
+        if (board[4][7] == null){
+            field4H.setLabel("_____");
+        }
+        else {
+            field4H.setLabel(board[4][7].getType());
+        }
+
+        if (board[5][0] == null){
+            field5A.setLabel("_____");
+        }
+        else {
+            field5A.setLabel(board[5][0].getType());
+        }
+
+        if (board[5][1] == null){
+            field5B.setLabel("_____");
+        }
+        else {
+            field5B.setLabel(board[5][1].getType());
+        }
+
+        if (board[5][2] == null){
+            field5C.setLabel("_____");
+        }
+        else {
+            field5C.setLabel(board[5][2].getType());
+        }
+
+        if (board[5][3] == null){
+            field5D.setLabel("_____");
+        }
+        else {
+            field5D.setLabel(board[5][3].getType());
+        }
+
+        if (board[5][4] == null){
+            field5E.setLabel("_____");
+        }
+        else {
+            field5E.setLabel(board[5][4].getType());
+        }
+
+        if (board[5][5] == null){
+            field5F.setLabel("_____");
+        }
+        else {
+            field5F.setLabel(board[5][5].getType());
+        }
+
+        if (board[5][6] == null){
+            field5G.setLabel("_____");
+        }
+        else {
+            field5G.setLabel(board[5][6].getType());
+        }
+
+        if (board[5][7] == null){
+            field5H.setLabel("_____");
+        }
+        else {
+            field5H.setLabel(board[5][7].getType());
+        }
+
+        if (board[6][0] == null){
+            field6A.setLabel("_____");
+        }
+        else {
+            field6A.setLabel(board[6][0].getType());
+        }
+
+        if (board[6][1] == null){
+            field6B.setLabel("_____");
+        }
+        else {
+            field6B.setLabel(board[6][1].getType());
+        }
+
+        if (board[6][2] == null){
+            field6C.setLabel("_____");
+        }
+        else {
+            field6C.setLabel(board[6][2].getType());
+        }
+
+        if (board[6][3] == null){
+            field6D.setLabel("_____");
+        }
+        else {
+            field6D.setLabel(board[6][3].getType());
+        }
+
+        if (board[6][4] == null){
+            field6E.setLabel("_____");
+        }
+        else {
+            field6E.setLabel(board[6][4].getType());
+        }
+
+        if (board[6][5] == null){
+            field6F.setLabel("_____");
+        }
+        else {
+            field6F.setLabel(board[6][5].getType());
+        }
+
+        if (board[6][6] == null){
+            field6G.setLabel("_____");
+        }
+        else {
+            field6G.setLabel(board[6][6].getType());
+        }
+
+        if (board[6][7] == null){
+            field6H.setLabel("_____");
+        }
+        else {
+            field6H.setLabel(board[6][7].getType());
+        }
+
+        if (board[7][0] == null){
+            field7A.setLabel("_____");
+        }
+        else {
+            field7A.setLabel(board[7][0].getType());
+        }
+
+        if (board[7][1] == null){
+            field7B.setLabel("_____");
+        }
+        else {
+            field7B.setLabel(board[7][1].getType());
+        }
+
+        if (board[7][2] == null){
+            field7C.setLabel("_____");
+        }
+        else {
+            field7C.setLabel(board[7][2].getType());
+        }
+
+        if (board[7][3] == null){
+            field7D.setLabel("_____");
+        }
+        else {
+            field7D.setLabel(board[7][3].getType());
+        }
+
+        if (board[7][4] == null){
+            field7E.setLabel("_____");
+        }
+        else {
+            field7E.setLabel(board[7][4].getType());
+        }
+
+        if (board[7][5] == null){
+            field7F.setLabel("_____");
+        }
+        else {
+            field7F.setLabel(board[7][5].getType());
+        }
+
+        if (board[7][6] == null){
+            field7G.setLabel("_____");
+        }
+        else {
+            field7G.setLabel(board[7][6].getType());
+        }
+
+        if (board[7][7] == null){
+            field7H.setLabel("_____");
+        }
+        else {
+            field7H.setLabel(board[7][7].getType());
+        }
 
     }
 
