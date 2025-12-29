@@ -20,7 +20,7 @@ public class Horse extends Figure{
         int difC = Math.abs(eCol-sCol);
 
         // check if the piece can move to the desired position WITHOUT regarding other pieces
-        if (difR != 2 || difC != 1){
+        if ((difR != 2 || difC != 1) && (difC != 2 || difR != 1)){
             System.out.println("1");
             return false;
         }

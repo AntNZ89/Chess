@@ -1770,21 +1770,21 @@ public class Chess extends Frame {
         canMove = true;
 
         if (figure instanceof Pawn pawn){ // check if selected piece is a pawn
-            if (pawn.getType().equals("pawnW") && pawn.isPossibleW(endR, endC, board) && turn.getText().equals("WHITE")){
+            if (pawn.getType().equals("PawnW") && pawn.isPossibleW(endR, endC, board) && turn.getText().equals("WHITE")){
                 pawn.move(endR, endC, board);
                 turn.setText("BLACK");
             }
-            else if (pawn.getType().equals("pawnB") && pawn.isPossibleB(endR, endC, board) && turn.getText().equals("BLACK")){
+            else if (pawn.getType().equals("PawnB") && pawn.isPossibleB(endR, endC, board) && turn.getText().equals("BLACK")){
                 pawn.move(endR, endC, board);
                 turn.setText("WHITE");
             }
         }
         else if (figure instanceof Rook rook){
-            if (rook.getType().equals("rookW") && rook.isPossible(endR, endC, board) && turn.getText().equals("WHITE")){
+            if (rook.getType().equals("RookW") && rook.isPossible(endR, endC, board) && turn.getText().equals("WHITE")){
                 rook.move(endR, endC, board);
                 turn.setText("BLACK");
             }
-            else if (rook.getType().equals("rookB") && rook.isPossible(endR, endC, board) && turn.getText().equals("BLACK")){
+            else if (rook.getType().equals("RookB") && rook.isPossible(endR, endC, board) && turn.getText().equals("BLACK")){
                 rook.move(endR, endC, board);
                 turn.setText("WHITE");
             }
