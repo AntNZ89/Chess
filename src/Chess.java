@@ -1,7 +1,4 @@
-import pieces.Bishop;
-import pieces.Figure;
-import pieces.Pawn;
-import pieces.Rook;
+import pieces.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -1802,6 +1799,16 @@ public class Chess extends Frame {
                 turn.setText("WHITE");
             }
         }
+        else if (figure instanceof Horse horse){
+            if (horse.getType().equals("HrseW") && horse.isPossibleW(endR, endC, board) && turn.getText().equals("WHITE")){
+                horse.move(endR, endC, board);
+                turn.setText("BLACK");
+            }
+            else if (horse.getType().equals("HrseB") && horse.isPossibleB(endR, endC, board) && turn.getText().equals("BLACK")){
+                horse.move(endR, endC, board);
+                turn.setText("WHITE");
+            }
+        }
 
         // set text for buttons
 
@@ -2276,7 +2283,19 @@ public class Chess extends Frame {
         initPawns(board);
         initRooks(board);
         initBishops(board);
+        initHorses(board);
         return board;
+    }
+
+    private static void initHorses(Figure[][] board){
+        Horse horseW1 = new Horse("white", 7, 2);
+        Horse horseW2 = new Horse("white", 7, 5);
+        board[horseW1.getRow()][horseW1.getCol()] = horseW1;
+        board[horseW2.getRow()][horseW2.getCol()] = horseW2;
+        Horse horseB1 = new Horse("black", 0, 2);
+        Horse horseB2 = new Horse("black", 0, 5);
+        board[horseB1.getRow()][horseB1.getCol()] = horseB1;
+        board[horseB2.getRow()][horseB2.getCol()] = horseB2;
     }
 
     private static void initBishops(Figure[][] board){

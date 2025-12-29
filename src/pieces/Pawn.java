@@ -7,10 +7,10 @@ public class Pawn extends Figure {
     public Pawn(String colour, int row, int col) {
         super(colour, row, col);
         if (this.colour.equalsIgnoreCase("white")){
-            this.type = "pawnW";
+            this.type = "PawnW";
         }
         else if (this.colour.equalsIgnoreCase("black")){
-            this.type = "pawnB";
+            this.type = "PawnB";
         }
     }
 
